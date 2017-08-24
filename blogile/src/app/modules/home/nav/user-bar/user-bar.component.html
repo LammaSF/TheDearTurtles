@@ -1,0 +1,4 @@
+<div class="user-bar">
+  <a routerLink="/sign-in" *ngIf="!auth.authenticated">Sign in</a>
+  <a routerLink="/" *ngIf="auth.authenticated">Sign out</a>
+</div>

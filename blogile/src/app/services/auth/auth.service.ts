@@ -9,13 +9,14 @@ import { Router } from '@angular/router';
 export class AuthService {
   authState: any = null;
 
-    constructor(private afAuth: AngularFireAuth,
+    constructor(
+                private afAuth: AngularFireAuth,
                 private db: AngularFireDatabase,
-                private router: Router) {
-
-              this.afAuth.authState.subscribe((auth) => {
-                this.authState = auth;
-              });
+                private router: Router
+              ) {
+                  this.afAuth.authState.subscribe((auth) => {
+                    this.authState = auth;
+                  });
             }
 
     // Returns true if user is logged in
@@ -59,6 +60,7 @@ export class AuthService {
         .then((user) => {
           this.authState = user;
           this.updateUserData();
+          this.router.navigateByUrl('/');
         })
         .catch(error => console.log(error));
     }
@@ -81,22 +83,13 @@ export class AuthService {
         .catch((error) => console.log(error));
     }
 
-
-    //// Sign Out ////
-
     signOut(): void {
       this.afAuth.auth.signOut();
       this.router.navigate(['/']);
     }
 
-
-    //// Helpers ////
-
     private updateUserData(): void {
-    // Writes user name and email to realtime db
-    // useful if your app displays information about users or for admin features
-
-      const path = `users/${this.currentUserId}`; // Endpoint on firebase
+      const path = `users/${this.currentUserId}`;
       const data = {
                     email: this.authState.email,
                     name: this.authState.displayName
@@ -104,6 +97,5 @@ export class AuthService {
 
       this.db.object(path).update(data)
       .catch(error => console.log(error));
-
   }
 }

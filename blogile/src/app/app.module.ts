@@ -14,16 +14,15 @@ import { RoutesModule } from './modules/routes/routes.module';
 
 import { AuthService } from './services/auth/auth.service';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
-
-import { MdToolbarModule } from '@angular/material';
-import { MdInputModule } from '@angular/material';
+import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
-import { NavComponent } from './components/nav/nav.component';
-import { SearchBarComponent } from './components/search-bar/search-bar.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { SignInComponent } from './components/sign-in/sign-in.component';
+
+import { NavComponent } from './modules/home/nav/nav.component';
+import { SearchBarComponent } from './modules/home/nav/search-bar/search-bar.component';
+import { UserBarComponent } from './modules/home/nav/user-bar/user-bar.component';
+
+import { UserComponent } from './modules/user/user.component';
 
 
 @NgModule({
@@ -31,8 +30,8 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     AppComponent,
     NavComponent,
     SearchBarComponent,
-    SignUpComponent,
-    SignInComponent
+    UserComponent,
+    UserBarComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +43,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     AngularFireAuthModule,
     RoutesModule,
     BrowserAnimationsModule,
-    FlexLayoutModule,
-    MdToolbarModule,
-    MdInputModule,
+    MaterializeModule
   ],
   providers: [
     AuthService,
