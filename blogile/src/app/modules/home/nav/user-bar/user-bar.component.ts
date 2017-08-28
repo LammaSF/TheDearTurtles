@@ -12,5 +12,7 @@ export class UserBarComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  signOut(){
+    this.auth.signOut();
+  }
 }
