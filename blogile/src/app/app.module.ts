@@ -23,8 +23,10 @@ import { SearchBarComponent } from './modules/home/nav/search-bar/search-bar.com
 import { UserBarComponent } from './modules/home/nav/user-bar/user-bar.component';
 
 import { UserModule } from './modules/user/user.module';
-import { SignUpModule} from './modules/sign-up/sign-up.module';
-import { SignInModule} from './modules/sign-in/sign-in.module';
+import { SignUpModule } from './modules/sign-up/sign-up.module';
+import { SignInModule } from './modules/sign-in/sign-in.module';
+import { SideNavModule } from "./modules/home/side-nav/side-nav.module";
+import {HomeModule} from "./modules/home/home.module";
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { SignInModule} from './modules/sign-in/sign-in.module';
     UserModule,
     SignUpModule,
     SignInModule,
+      SideNavModule,
+      HomeModule
   ],
   providers: [
     AuthService,
