@@ -26,6 +26,7 @@
     "@types/hammerjs": "^2.0.34",
     "@types/materialize-css": "^0.100.0",
     "angular2-materialize": "^15.1.9",
+    "angular2-toaster": "^4.0.1",
     "angularfire2": "^4.0.0-rc.2",
     "core-js": "^2.4.1",
     "firebase": "^4.3.0",

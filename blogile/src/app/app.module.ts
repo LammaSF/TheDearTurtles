@@ -13,7 +13,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RoutesModule } from './modules/routes/routes.module';
 
 import { AuthService } from './services/auth/auth.service';
-
+// import { NotificationsService } from './services/notifications/notifications.service';
 import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
@@ -22,16 +22,15 @@ import { NavComponent } from './modules/home/nav/nav.component';
 import { SearchBarComponent } from './modules/home/nav/search-bar/search-bar.component';
 import { UserBarComponent } from './modules/home/nav/user-bar/user-bar.component';
 
-import { UserComponent } from './modules/user/user.component';
-
+import { UserModule } from './modules/user/user.module';
+import { SignUpModule} from './modules/sign-up/sign-up.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     SearchBarComponent,
-    UserComponent,
-    UserBarComponent
+    UserBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,10 +42,13 @@ import { UserComponent } from './modules/user/user.component';
     AngularFireAuthModule,
     RoutesModule,
     BrowserAnimationsModule,
-    MaterializeModule
+    MaterializeModule,
+    UserModule,
+    SignUpModule,
   ],
   providers: [
     AuthService,
+    // NotificationsService,
   ],
   bootstrap: [AppComponent]
 })
