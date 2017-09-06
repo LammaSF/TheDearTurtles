@@ -6,3 +6,8 @@ label{
     display: inline-block;
     line-height: 50px;
 }
+@media screen and (max-width: 600px) {
+    #nav-search-container {
+        width: 75%;
+    }
+}
