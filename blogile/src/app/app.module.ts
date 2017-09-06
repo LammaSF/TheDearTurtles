@@ -10,7 +10,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
-import { RoutesModule } from './modules/routes/routes.module';
+import { RoutesModule } from './modules/routes/routes.root.module';
 
 import { AuthService } from './services/auth/auth.service';
 // import { NotificationsService } from './services/notifications/notifications.service';
@@ -18,22 +18,15 @@ import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
 
-import { NavComponent } from './modules/home/nav/nav.component';
-import { SearchBarComponent } from './modules/home/nav/search-bar/search-bar.component';
-import { UserBarComponent } from './modules/home/nav/user-bar/user-bar.component';
-
+import { SharedModule } from './modules/shared/shared.module';
 import { UserModule } from './modules/user/user.module';
-import { SignUpModule } from './modules/sign-up/sign-up.module';
-import { SignInModule } from './modules/sign-in/sign-in.module';
+import { AuthModule } from './modules/auth/auth.module';
 import { SideNavModule } from './modules/home/side-nav/side-nav.module';
-import {HomeModule} from './modules/home/home.module';
+import { HomeModule } from './modules/home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
-    SearchBarComponent,
-    UserBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,10 +40,10 @@ import {HomeModule} from './modules/home/home.module';
     BrowserAnimationsModule,
     MaterializeModule,
     UserModule,
-    SignUpModule,
-    SignInModule,
+    AuthModule,
     SideNavModule,
-    HomeModule
+    HomeModule,
+    SharedModule
   ],
   providers: [
     AuthService,

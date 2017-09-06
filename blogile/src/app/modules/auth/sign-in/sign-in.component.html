@@ -15,7 +15,5 @@
     Password is <strong>required</strong>
   </div>
   <button type="submit" class="button" [disabled]="!userForm.valid" (click)='signIn()'>Sign In</button>
-  <p *ngIf="passReset" class="help is-info">Reset requested. Check your email instructions.</p>
-
 </form>
 <a routerLink="/sign-up">or Sign up</a>
