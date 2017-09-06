@@ -49,8 +49,8 @@ import {HomeModule} from "./modules/home/home.module";
     UserModule,
     SignUpModule,
     SignInModule,
-      SideNavModule,
-      HomeModule
+    SideNavModule,
+    HomeModule
   ],
   providers: [
     AuthService,
