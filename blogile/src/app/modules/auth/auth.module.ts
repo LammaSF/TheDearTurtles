@@ -2,21 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { SignInComponent } from './sign-in.component';
-import { RoutesModule } from '../routes/routes.module';
+import { AuthRoutesModule } from './auth.routes.module';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    RoutesModule,
-  ],
-  exports: [
-    SignInComponent
+    AuthRoutesModule
   ],
   declarations: [
     SignInComponent,
+    SignUpComponent
+  ],
+  exports: [
   ]
 })
-export class SignInModule { }
+export class AuthModule { }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../../../../services/auth/auth.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-user-bar',
   templateUrl: './user-bar.component.html',
@@ -8,11 +10,14 @@ import { AuthService } from './../../../../services/auth/auth.service';
 })
 export class UserBarComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
-  signOut(){
+  signIn() {
+    this.router.navigateByUrl('/auth/sign-in');
+  }
+  signOut() {
     this.auth.signOut();
   }
 }

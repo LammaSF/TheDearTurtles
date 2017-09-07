@@ -1,0 +1,17 @@
+<div class="row">
+<form [formGroup]="userForm" *ngIf="newUser" (ngSubmit)="signup()" class="card col s12 m6 l6 xl4 offset-xl2">
+  <input type="email" id="email" class="input" formControlName="email" required placeholder="Email">
+  <div *ngIf="formErrors.email" class="notification is-danger">
+    {{ formErrors.email }}
+  </div>
+  <input type="password" id="password" class="input" formControlName="password" required placeholder="Password">
+  <div *ngIf="formErrors.password" class="notification is-danger">
+    {{ formErrors.password }}
+  </div>
+  <div *ngIf="userForm.valid" class="notification is-success">Form is valid</div>
+  <div class="center">
+    <button type="submit" class="blue-hover btn-flat">Register</button>
+    <a class="blue-hover btn-flat" routerLink="/sign-in">Sign in now</a>
+  </div>
+</form>
+</div>
