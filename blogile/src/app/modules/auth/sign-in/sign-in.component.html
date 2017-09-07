@@ -1,19 +1,22 @@
-
-<form>
-  <input type="email" mdInput [(ngModel)]="email" placeholder="Email" [formControl]="emailFormControl">
-  <div *ngIf="emailFormControl.hasError('pattern')">
-    Please enter a valid email address
-  </div>
-  <div *ngIf="emailFormControl.hasError('required')">
-    Email is <strong>required</strong>
-  </div>
-  <input type="password" mdInput [(ngModel)]="password" placeholder="Password" [formControl]="passwordFormControl">
-  <div *ngIf="passwordFormControl.hasError('pattern')">
-    Please enter a valid password
-  </div>
-  <div *ngIf="passwordFormControl.hasError('required')">
-    Password is <strong>required</strong>
-  </div>
-  <button type="submit" class="button" [disabled]="!userForm.valid" (click)='signIn()'>Sign In</button>
-</form>
-<a routerLink="/sign-up">or Sign up</a>
+<div class="row">
+  <form [formGroup]="userForm" class="sign-in-form card col s12 m6 l6 xl4 offset-xl2">
+    <input type="email" mdInput [(ngModel)]="email" placeholder="Email" [formControl]="emailFormControl" class="validate">
+    <div *ngIf="emailFormControl.hasError('pattern')" data>
+      Please enter a valid email address
+    </div>
+    <div *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </div>
+    <input type="password" mdInput [(ngModel)]="password" placeholder="Password" [formControl]="passwordFormControl">
+    <div *ngIf="passwordFormControl.hasError('pattern')">
+      Please enter a valid password
+    </div>
+    <div *ngIf="passwordFormControl.hasError('required')">
+      Password is <strong>required</strong>
+    </div>
+    <div class="center row">
+        <button type="submit" class="blue-hover btn-flat" (click)='signIn()'>Sign In</button>
+        <a routerLink="/sign-up" class="blue-hover btn-flat">Sign up now</a>
+    </div>
+  </form>
+</div>

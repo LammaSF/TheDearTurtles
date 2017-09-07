@@ -23,13 +23,13 @@ export class SignInComponent implements OnInit{
     createForm() {
         this.emailFormControl = new FormControl('', [
             Validators.required,
-            Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/   )]);
+            Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)]);
 
         this.passwordFormControl = new FormControl('', [
             Validators.required,
             Validators.pattern(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/),
             Validators.minLength(6),
-            Validators.maxLength(25)]);
+            Validators.maxLength(10)]);
 
         this.userForm = this.formBuilder.group({
             emailFormControl: this.emailFormControl,

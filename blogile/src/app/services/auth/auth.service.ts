@@ -60,7 +60,7 @@ export class AuthService {
         .then((user) => {
           this.authState = user;
           this.updateUserData();
-          this.router.navigateByUrl('/');
+          this.router.navigateByUrl('/profile');
         })
         .catch(error => console.log(error));
     }
@@ -70,6 +70,7 @@ export class AuthService {
          .then((user) => {
            this.authState = user;
            this.updateUserData();
+          this.router.navigateByUrl('/profile');
          })
          .catch(error => console.log(error));
     }

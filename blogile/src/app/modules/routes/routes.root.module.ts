@@ -13,7 +13,8 @@ import { HomeComponent } from '../home/home.component';
 const rootRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'auth', loadChildren: '../auth/auth.module#AuthModule'}
+  { path: 'auth', loadChildren: '../auth/auth.module#AuthModule'},
+  { path: 'user', loadChildren: '../user/user.module#UserModule'}
 ];
 
 @NgModule({
