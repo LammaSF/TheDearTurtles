@@ -1,0 +1,47 @@
+@import "../../../../styles";
+
+.row {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 2%;
+
+}
+.a-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+a:hover {
+  opacity: 1;
+ color: $primary-color-light;
+  transform: translateY(0px);
+
+  -webkit-transform: translateY(0px);
+}
+
+/////*effect-underline*/
+//a.effect-underline:after {
+//  content: '';
+//  text-align: center;
+//  position: absolute;
+//  display: inline-block;
+//  height: 1em;
+//  left: 33%;
+//  width: 28%;
+//  border-bottom: 1px solid;
+//  margin-top: 10px;
+//  opacity: 0;
+//  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+//  transition: opacity 0.35s, transform 0.35s;
+//  -webkit-transform: scale(0,1);
+//  transform: scale(0,1);
+//}
+//
+//a.effect-underline:hover:after {
+//  opacity: 1;
+//  -webkit-transform: scale(1);
+//  transform: scale(1);
+//}
+//
+//
+//

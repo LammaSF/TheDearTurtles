@@ -1,9 +1,5 @@
 @import "../../../styles";
 
-ul {
-  margin: 0 auto;
-  margin-top: 2%;
-}
 .circle {
   background-color: $accent-color;
 }
@@ -14,6 +10,14 @@ ul {
 
 .card {
   background-color: $primary-color-light;
+
+}
+
+.stats-wrapper{
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 2%;
+
 }
 
 

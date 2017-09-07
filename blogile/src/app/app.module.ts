@@ -13,6 +13,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RoutesModule } from './modules/routes/routes.root.module';
 
 import { AuthService } from './services/auth/auth.service';
+
 // import { NotificationsService } from './services/notifications/notifications.service';
 import { MaterializeModule } from 'angular2-materialize';
 
@@ -45,7 +46,7 @@ import { StatisticsModule} from "./modules/statistics/statistics.module";
     SideNavModule,
     HomeModule,
     SharedModule,
-    StatisticsModule
+    StatisticsModule,
   ],
   providers: [
     AuthService,
