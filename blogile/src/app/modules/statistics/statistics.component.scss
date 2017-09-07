@@ -1,12 +1,19 @@
 @import "../../../styles";
 
 ul {
-  width: 50%;
   margin: 0 auto;
   margin-top: 2%;
 }
 .circle {
   background-color: $accent-color;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.card {
+  background-color: $primary-color-light;
 }
 
 

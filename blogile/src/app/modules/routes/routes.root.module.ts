@@ -5,10 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from '../../app.component';
 import { UserModule } from '../user/user.module';
+import { StatisticsModule} from '../statistics/statistics.module';
 
-
-
-import { StatisticsComponent} from '../statistics/statistics.component';
 import { HomeComponent } from '../home/home.component';
 
 
@@ -17,7 +15,7 @@ const rootRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'auth', loadChildren: '../auth/auth.module#AuthModule'},
   { path: 'user', loadChildren: '../user/user.module#UserModule'},
-  { path: 'statistics', component: StatisticsComponent}
+  { path: 'statistics', loadChildren: '../statistics/statistics.module#StatisticsModule'}
 ];
 
 @NgModule({
