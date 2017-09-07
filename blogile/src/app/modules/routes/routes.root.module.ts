@@ -15,7 +15,7 @@ const rootRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'auth', loadChildren: '../auth/auth.module#AuthModule'},
   { path: 'user', loadChildren: '../user/user.module#UserModule'},
-  { path: 'statistics', loadChildren: '../statistics/statistics.module#StatisticsModule'}
+  { path: 'stats', loadChildren: '../statistics/statistics.module#StatisticsModule'}
 ];
 
 @NgModule({
