@@ -23,6 +23,7 @@ import { UserModule } from './modules/user/user.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { SideNavModule } from './modules/home/side-nav/side-nav.module';
 import { HomeModule } from './modules/home/home.module';
+import { StatisticsModule} from "./modules/statistics/statistics.module";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { HomeModule } from './modules/home/home.module';
     AuthModule,
     SideNavModule,
     HomeModule,
-    SharedModule
+    SharedModule,
+    StatisticsModule
   ],
   providers: [
     AuthService,

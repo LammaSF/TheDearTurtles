@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from '../../app.component';
 import { UserModule } from '../user/user.module';
-import { StatisticsModule} from "../statistics/statistics.module";
+
 
 
 import { StatisticsComponent} from '../statistics/statistics.component';
