@@ -12,6 +12,7 @@ import { UserInterface } from './../../models/contracts/user.interface';
 
 import { UserData } from '../user/user.data.service';
 import { NotificationService } from '../notifications/notifications.service';
+import { CONSTANTS } from '../../constants/constants';
 
 
 @Injectable()
@@ -77,9 +78,10 @@ export class AuthService {
        return this.afAuth.auth.signInWithEmailAndPassword(email, password)
          .then((user) => {
            this.authState = user;
-           // this.updateUserData();
-          this.notificationService.popToast('success', 'Success!', 'You have logged successfully!');
-          this.router.navigateByUrl('/profile');
+           localStorage.setItem(CONSTANTS.LOCALSTORAGE_AUTH_KEY_NAME, user.uid);
+           localStorage.setItem(CONSTANTS.LOCALSTORAGE_EMAIL_KEY_NAME, user.email);
+           this.router.navigateByUrl('/profile');
+           this.notificationService.popToast('success', 'Success!', 'You have logged successfully!');
          })
          .catch(error => this.notificationService.popToast('error', 'Something went wrong!', error.message));
     }
@@ -94,9 +96,13 @@ export class AuthService {
     // }
 
     signOut(): void {
-      this.afAuth.auth.signOut();
-      this.notificationService.popToast('info', 'Success!', 'Successfully signed out!');
-      this.router.navigate(['/']);
+      this.afAuth.auth.signOut()
+        .then( () => {
+          localStorage.removeItem(CONSTANTS.LOCALSTORAGE_AUTH_KEY_NAME);
+          localStorage.removeItem(CONSTANTS.LOCALSTORAGE_EMAIL_KEY_NAME);
+          this.notificationService.popToast('info', 'Success!', 'Successfully signed out!');
+          this.router.navigate(['/']);
+        });
     }
 
   //   private updateUserData(): void {
