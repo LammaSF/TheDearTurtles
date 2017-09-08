@@ -42,7 +42,6 @@ import { HomeModule } from './modules/home/home.module';
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     CoreModule,
-    RoutesModule,
     BrowserAnimationsModule,
     MaterializeModule,
     UserModule,
@@ -51,6 +50,7 @@ import { HomeModule } from './modules/home/home.module';
     HomeModule,
     SharedModule,
     ToasterModule,
+    RoutesModule,
   ],
   providers: [
 
