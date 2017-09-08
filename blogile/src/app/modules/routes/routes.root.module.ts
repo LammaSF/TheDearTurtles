@@ -21,6 +21,7 @@ const rootRoutes: Routes = [
   { path: 'user', loadChildren: '../user/user.module#UserModule'},
   { path: 'stats', loadChildren: '../statistics/statistics.module#StatisticsModule'},
   { path: 'about', loadChildren: '../about/about.module#AboutModule'},
+  // { path: 'edit', loadChildren: '../user/user.module#UserModule'},
 
 ];
 
