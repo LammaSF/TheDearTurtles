@@ -8,7 +8,7 @@ import * as firebase from 'firebase/app';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs/Subject';
 
-import { UserInterface } from './../../models/contracts/user';
+import { UserInterface } from './../../models/contracts/user.interface';
 
 import { UserData } from '../user/user.data.service';
 import { NotificationService } from '../notifications/notifications.service';

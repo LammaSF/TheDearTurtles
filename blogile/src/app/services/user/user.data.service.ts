@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-import { UserInterface } from '../../models/contracts/user';
+import { UserInterface } from '../../models/contracts/user.interface';
 import * as firebase from 'firebase';
 
 @Injectable()
