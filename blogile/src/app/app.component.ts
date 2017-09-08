@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AuthService } from './services/auth/auth.service';
-// import { NotificationsService } from './services/notifications/notifications.service';
+import { NotificationService } from './services/notifications/notifications.service';
 
+import { ToasterConfig } from 'angular2-toaster/angular2-toaster';
 
 @Component({
   selector: 'app-root',
@@ -10,15 +11,15 @@ import { AuthService } from './services/auth/auth.service';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent  /* implements OnInit */ {
+export class AppComponent  implements OnInit {
   items: FirebaseListObservable<any[]>;
-  // public toastrInit: object;
+  public toasterconfig: object;
 
-  constructor(public auth: AuthService, private db: AngularFireDatabase, ) {
+  constructor(public auth: AuthService, private db: AngularFireDatabase, private notificationService: NotificationService) {
     this.items = db.list('/items');
   }
 
-  // ngOnInit(): void {
-  //   this.toastrInit = this.notificationsService.toasterConfig;
-  // }
+  ngOnInit(): void {
+    this.toasterconfig = this.notificationService.toasterconfig;
+  }
 }

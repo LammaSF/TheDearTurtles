@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+
+import { FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { FormBuilder, AbstractControl } from '@angular/forms';
+
 import { AuthService } from '../../../services/auth/auth.service';
-import { FormControl, Validators, FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
+import { CONSTANTS } from '../../../constants/constants';
 
 @Component({
   selector: 'app-sign-in',
@@ -23,11 +29,13 @@ export class SignInComponent implements OnInit{
     createForm() {
         this.emailFormControl = new FormControl('', [
             Validators.required,
-            Validators.pattern(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)]);
+            Validators.pattern(CONSTANTS.EMAIL_VALIDATION_REGEX),
+            Validators.minLength(6),
+            Validators.maxLength(25)]);
 
         this.passwordFormControl = new FormControl('', [
             Validators.required,
-            Validators.pattern(/^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$/),
+            Validators.pattern(CONSTANTS.PASSWORD_VALIDATION_REGEX),
             Validators.minLength(6),
             Validators.maxLength(10)]);
 

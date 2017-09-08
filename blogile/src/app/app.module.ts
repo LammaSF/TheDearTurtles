@@ -19,6 +19,10 @@ import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
 
+
+import { CoreModule } from './modules/core/core.module';
+import { ToasterModule } from 'angular2-toaster';
+
 import { SharedModule } from './modules/shared/shared.module';
 import { UserModule } from './modules/user/user.module';
 import { AuthModule } from './modules/auth/auth.module';
@@ -39,6 +43,7 @@ import { AboutModule} from './modules/about/about.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    CoreModule,
     RoutesModule,
     BrowserAnimationsModule,
     MaterializeModule,
@@ -48,11 +53,11 @@ import { AboutModule} from './modules/about/about.module';
     HomeModule,
     SharedModule,
     StatisticsModule,
-    AboutModule
+    AboutModule,
+    ToasterModule
   ],
   providers: [
-    AuthService,
-    // NotificationsService,
+
   ],
   bootstrap: [AppComponent]
 })

@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { ToasterService, ToasterConfig, Toast } from 'angular2-toaster/angular2-toaster';
 
 @Injectable()
-export class NotificationsService {
-  constructor(private toasterService: ToasterService, public toasterConfig: ToasterConfig) {
+export class NotificationService {
+  constructor(private toasterService: ToasterService) {
   }
 
   public toasterconfig: ToasterConfig =
