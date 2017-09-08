@@ -12,7 +12,7 @@ import { UserInterface } from './../../models/contracts/user.interface';
 
 import { UserData } from '../user/user.data.service';
 import { NotificationService } from '../notifications/notifications.service';
-import { CONSTANTS } from "../../constants/constants";
+import { CONSTANTS } from '../../constants/constants';
 
 
 @Injectable()

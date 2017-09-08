@@ -8,7 +8,7 @@ export class NotificationService {
 
   public toasterconfig: ToasterConfig =
   new ToasterConfig({
-      showCloseButton: true,
+      showCloseButton: false,
       tapToDismiss: true,
       timeout: 3000,
       limit: 5,
