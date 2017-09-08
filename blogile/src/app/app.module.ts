@@ -24,7 +24,8 @@ import { UserModule } from './modules/user/user.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { SideNavModule } from './modules/home/side-nav/side-nav.module';
 import { HomeModule } from './modules/home/home.module';
-import { StatisticsModule} from "./modules/statistics/statistics.module";
+import { StatisticsModule} from './modules/statistics/statistics.module';
+import { AboutModule} from './modules/about/about.module';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { StatisticsModule} from "./modules/statistics/statistics.module";
     HomeModule,
     SharedModule,
     StatisticsModule,
+    AboutModule
   ],
   providers: [
     AuthService,

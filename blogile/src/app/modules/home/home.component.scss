@@ -1,9 +1,19 @@
 @import "../../../styles";
 
-.btn {
+.statsbtn {
+   background-color: $accent-color;
+   right: 0;
+   display: block;
+   margin-top: 5%;
+   width: 15%;
+ }
+
+.aboutbtn {
   background-color: $accent-color;
-  float: right;
-  margin-top:5%;
+  right: 0;
+  display: block;
+  margin-top: 2%;
+  width: 15%;
 }
 
 .circle {
