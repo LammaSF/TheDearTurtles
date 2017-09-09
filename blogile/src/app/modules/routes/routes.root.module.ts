@@ -16,6 +16,7 @@ const rootRoutes: Routes = [
   { path: 'auth', loadChildren: '../auth/auth.module#AuthModule'},
   { path: 'user', loadChildren: '../user/user.module#UserModule'},
   { path: 'shared', loadChildren: '../shared/shared.module#SharedModule'},
+  { path: 'blog', loadChildren: '../blog/blog.module#BlogModule'},
   { path: '**', component: Error404Component }
 ];
 
