@@ -1,6 +1,12 @@
 <div class="container-fluid">
   <toaster-container [toasterconfig]="toasterconfig"></toaster-container>
-  <app-nav></app-nav>
-  <app-footer></app-footer>
-  <router-outlet></router-outlet>
+  <header>
+      <app-nav></app-nav>
+  </header>
+  <main>
+      <router-outlet></router-outlet>
+  </main>
+  <footer>
+      <app-footer></app-footer>
+  </footer>
 </div>
