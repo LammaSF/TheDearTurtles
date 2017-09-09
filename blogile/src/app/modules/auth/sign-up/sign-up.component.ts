@@ -91,7 +91,7 @@ export class SignUpComponent implements OnInit {
 
   signup(): void {
     const user = this.userFactory
-      .createUser(this.username, this.firstName, this.lastName, this.email, '');
+      .createUser(this.firstName, this.lastName, this.username, this.email, '');
 
     this.auth.emailSignUp(this.email, this.password, user)
       .then(() => {
@@ -110,9 +110,12 @@ export class SignUpComponent implements OnInit {
 
   uploadFile() {
     const userId = this.auth.currentUserId;
+    if (!this.selectedFiles) {
+      return new Promise((resolve, reject) => resolve());
+    }
     const file = this.selectedFiles.item(0);
     if (!file) {
-      return;
+      return new Promise((resolve, reject) => resolve());
     }
     const dbPath = `users/${userId}/profileImage`;
     const storagePath = `images/users/${userId}`;
