@@ -6,16 +6,14 @@
       </div>
       <div class="card-action">
         <div class="row">
-          <button class="blue"><i class="material-icons circle white-text">edit</i></button>
           <div class="input-field col s10">
-            <input disabled value="{{user.email}}" id="change-email" type="text" class="validate">
-            <label [ngClass]="{'active': user?.email}" for="change-email">Change your email</label>
+            <input [(ngModel)]="newEmail" value="{{user.email}}" id="change-email" type="email" class="validate">
+            <label [ngClass]="{'active': user?.email}" for="change-email">Enter your new email:</label>
           </div>
         </div>
         <div class="row center-align">
-          <button class="blue"><i class="material-icons circle white-text">edit</i></button>
           <div class="input-field col s10">
-            <input disabled value="password" id="password" type="text" class="validate">
+            <input [(ngModel)]="password" value="password" id="password" type="password" class="validate">
             <label [ngClass]="{active: true}" for="password">Enter your password:</label>
           </div>
           <button type="button" class="waves-effect waves-light btn blue-btn" (click)="changeEmail()">Change Email</button>
@@ -25,13 +23,12 @@
         <div class="row ">
           <button type="button" class="waves-effect waves-light btn blue-btn" (click)="resetPassword()">Reset password</button>
         </div>
-        <div class="upload row center-align">
-          <div *ngIf="upload">
-            Selected photo: {{upload?.name}}
-          </div>
-          <button type="button" class="waves-effect waves-light btn blue-btn" (click)="imgFileInput.click()">Change photo</button>
-          <input hidden type="file" #imgFileInput (change)="detectFile($event)" />
-        </div>
+      </div>
+      <div class="card-action row center-align">
+        <button type="button" class="upload-btn waves-effect waves-light btn blue-btn" (click)="imgFileInput.click()">Pick photo</button>
+        <span *ngIf="upload">Selected photo: {{fileName}}</span>
+        <input hidden type="file" #imgFileInput (change)="detectFile($event)" />
+        <button type="button" class="submit-btn waves-effect waves-light btn blue-btn" (click)="changePicture()">Change photo</button>
       </div>
     </div>
   </div>
