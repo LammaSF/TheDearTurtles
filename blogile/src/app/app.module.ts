@@ -32,6 +32,7 @@ import { ViewBlogComponent } from '../src/app/view-blog/view-blog.component';
 import { BlogComponent } from '../src/app/blog/blog.component';
 import { CreateThreadComponent } from '../src/app/create-thread/create-thread.component';
 import { ViewThreadComponent } from '../src/app/view-thread/view-thread.component';
+import { CommentComponent } from '../src/app/comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ViewThreadComponent } from '../src/app/view-thread/view-thread.componen
     BlogComponent,
     CreateThreadComponent,
     ViewThreadComponent,
+    CommentComponent,
   ],
   imports: [
     BrowserModule,
