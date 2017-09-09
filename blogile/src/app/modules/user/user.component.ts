@@ -13,16 +13,19 @@ export class UserComponent implements OnInit {
 
   public user: UserInterface;
   public userId: string;
+  // public isLoaded: Promise<boolean>;
 
   constructor(private auth: AuthService, private userService: UserData) { }
 
   ngOnInit() {
+    this.userId = this.auth.currentUserId || localStorage.authkey;
+    console.log("dsdasd" + this.userId );
+    
     this.userService
-      .getUserByUid(this.auth.currentUserId)
-      .subscribe((res) => {
-        this.user = res;
-        this.userId = this.auth.currentUserId;
-      });
+    .getUserByUid(this.userId)
+    .subscribe((res) => {
+      this.user = res;
+      this.userId = this.auth.currentUserId;
+    });
   }
-
 }

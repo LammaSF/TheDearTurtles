@@ -26,7 +26,6 @@ import { ToasterModule } from 'angular2-toaster';
 import { SharedModule } from './modules/shared/shared.module';
 import { UserModule } from './modules/user/user.module';
 import { AuthModule } from './modules/auth/auth.module';
-import { SideNavModule } from './modules/home/side-nav/side-nav.module';
 import { HomeModule } from './modules/home/home.module';
 
 @NgModule({
@@ -41,15 +40,14 @@ import { HomeModule } from './modules/home/home.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    CoreModule,
     BrowserAnimationsModule,
     MaterializeModule,
-    UserModule,
-    AuthModule,
-    SideNavModule,
+    CoreModule,
     HomeModule,
     SharedModule,
     ToasterModule,
+    UserModule,
+    AuthModule,
     RoutesModule,
   ],
   providers: [
