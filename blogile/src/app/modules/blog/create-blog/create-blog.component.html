@@ -1,22 +1,41 @@
+<!-- <div class="row">
+  <div class="col s12 m6 l4 xl3 offset-xl3">
+    <div class="card darken-1">
+      <div class="card-content black-text center-align">
+        <span class="card-title">Create Blog</span>
+        <input placeholder="Blog title" id="blog-title" type="text" class="validate">
+        <label for="blog-title">Enter blog title:</label>
+        <input placeholder="Blog description" id="blog-description" type="text" class="validate">
+        <label for="blog-description">Enter blog description:</label>
+      </div>
+       
+       <div class="input-field col s12">
+            <button type="button" class="upload-btn waves-effect waves-light btn blue-btn" (click)="imgFileInput.click()">Pick photo</button>
+            <span *ngIf="upload">Selected photo: {{fileName}}</span>
+            <input hidden type="file" #imgFileInput (change)="detectFile($event)" />
+            <button type="button" class="submit-btn waves-effect waves-light btn blue-btn" (click)="changePicture()">Change photo</button>
+        </div> 
+</div>
+</div>
+</div> --> 
 <div class="row">
   <div class="col s12 m6 l4 xl3 offset-xl3">
     <div class="card darken-1">
       <div class="card-content black-text center-align">
         <span class="card-title">Create Blog</span>
-        <div class="input-field col s12">
-          <input placeholder="Blog title" id="blog-title" type="text" class="validate">
-          <label for="blog-title">Enter blog title:</label>
+      </div>
+      <div class="card-action">
+        <div class="row">
+          <div class="input-field col s10">
+              <input placeholder="Blog title" id="blog-title" type="text" class="validate">
+              <label for="blog-title">Enter blog title:</label>
+          </div>
+          <div class="input-field col s10">
+              <input placeholder="Blog description" id="blog-description" type="text" class="validate">
+              <label for="blog-title">Enter blog description:</label>
+          </div>
         </div>
-        <div class="input-field col s12">
-          <input placeholder="Blog description" id="blog-description" type="text" class="validate">
-          <label for="blog-description">Enter blog description:</label>
-        </div>
-        <!-- <div class="input-field col s12">
-            <button type="button" class="upload-btn waves-effect waves-light btn blue-btn" (click)="imgFileInput.click()">Pick photo</button>
-            <span *ngIf="upload">Selected photo: {{fileName}}</span>
-            <input hidden type="file" #imgFileInput (change)="detectFile($event)" />
-            <button type="button" class="submit-btn waves-effect waves-light btn blue-btn" (click)="changePicture()">Change photo</button>
-        </div> -->
+
       </div>
     </div>
   </div>

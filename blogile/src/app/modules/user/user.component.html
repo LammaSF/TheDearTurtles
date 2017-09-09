@@ -9,8 +9,8 @@
         </li>
         <li class="avatar">
           <div class=" center-align">
-              <img src="{{user.profileImage}}" id="nav-image" class="responsive-image" *ngIf="user.profileImage"/>
-              <img src="../../../assets/images/profile-default.png" class="responsive-img" id="nav-image" *ngIf=!user?.profileImage />
+              <img src="{{user.profileImage.url}}" id="nav-image" class="responsive-image profile-image" *ngIf="user.profileImage"/>
+              <img src="../../../assets/images/profile-default.png" class="responsive-img profile-image" id="nav-image" *ngIf=!user?.profileImage />
           </div>
         </li>
         <li class="avatar">
@@ -27,7 +27,7 @@
         </li>
         <li>
           <div class="card-action center">
-            <a routerLink="" class="btn blue">CREATE BLOG</a>
+            <a routerLink="/blog/create" class="btn blue">CREATE BLOG</a>
             <a routerLink="/user/edit-profile" class="btn blue">EDIT PROFILE</a>
           </div>
         </li>
