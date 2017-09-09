@@ -27,22 +27,12 @@ import { SharedModule } from './modules/shared/shared.module';
 import { UserModule } from './modules/user/user.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { HomeModule } from './modules/home/home.module';
-import { CreateBlogComponent } from '../src/app/create-blog/create-blog.component';
-import { ViewBlogComponent } from '../src/app/view-blog/view-blog.component';
-import { BlogComponent } from '../src/app/blog/blog.component';
-import { CreateThreadComponent } from '../src/app/create-thread/create-thread.component';
-import { ViewThreadComponent } from '../src/app/view-thread/view-thread.component';
-import { CommentComponent } from '../src/app/comment/comment.component';
+import { BlogModule } from './modules/blog/blog.module';
+import { ThreadModule } from './modules/thread/thread.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateBlogComponent,
-    ViewBlogComponent,
-    BlogComponent,
-    CreateThreadComponent,
-    ViewThreadComponent,
-    CommentComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +50,8 @@ import { CommentComponent } from '../src/app/comment/comment.component';
     ToasterModule,
     UserModule,
     AuthModule,
+    BlogModule,
+    ThreadModule,
     RoutesModule,
   ],
   providers: [
