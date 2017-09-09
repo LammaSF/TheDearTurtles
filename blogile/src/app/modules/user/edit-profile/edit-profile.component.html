@@ -1,42 +1,38 @@
-
-<div class="row">
-  <div class="col s12 m6 offset-m2">
-    <!--<div class="card darken-1">-->
-    <div class="card-content black-text">
-
-      <ul class="collection z-depth-2">
-        <li class="collection-item avatar">
-          <span class="card-title black-text title">PROFILE</span>
-        </li>
-        <li class="collection-item avatar">
-          <span class="title">Image:</span>
-          <<p></p>>
-          <i class="material-icons circle blue">edit</i>
-        </li>
-        <li class="collection-item avatar">
-          <span class="title">Username:</span>
-          <p></p>
-          <i class="material-icons circle blue">edit</i>
-        </li>
-        <li class="collection-item avatar">
-
-          <span class="title">Last name:</span>
-          <p></p>
-          <i class="material-icons circle blue">edit</i>
-        </li>
-        <li class="collection-item avatar">
-          <span class="title">Email:</span>
-          <p></p>
-         <div class="right-align"><i class="material-icons circle blue">edit</i></div>
-        </li>
-        <li>
-          <div class="card-action center">
-            <a routerLink="/" class="btn blue">BACK TO HOME</a>
+<div class="row" *ngIf=user>
+  <div class="col s12 m6 l4 xl3 offset-xl3">
+    <div class="card darken-1">
+      <div class="card-content black-text center-align">
+        <span class="card-title">Profile edit</span>
+      </div>
+      <div class="card-action">
+        <div class="row">
+          <button class="blue"><i class="material-icons circle white-text">edit</i></button>
+          <div class="input-field col s10">
+            <input disabled value="{{user.email}}" id="change-email" type="text" class="validate">
+            <label [ngClass]="{'active': user?.email}" for="change-email">Change your email</label>
           </div>
-        </li>
-      </ul>
-
+        </div>
+        <div class="row center-align">
+          <button class="blue"><i class="material-icons circle white-text">edit</i></button>
+          <div class="input-field col s10">
+            <input disabled value="password" id="password" type="text" class="validate">
+            <label [ngClass]="{active: true}" for="password">Enter your password:</label>
+          </div>
+          <button type="button" class="waves-effect waves-light btn blue-btn" (click)="changeEmail()">Change Email</button>
+        </div>
+      </div>
+      <div class="card-action row center-align">
+        <div class="row ">
+          <button type="button" class="waves-effect waves-light btn blue-btn" (click)="resetPassword()">Reset password</button>
+        </div>
+        <div class="upload row center-align">
+          <div *ngIf="upload">
+            Selected photo: {{upload?.name}}
+          </div>
+          <button type="button" class="waves-effect waves-light btn blue-btn" (click)="imgFileInput.click()">Change photo</button>
+          <input hidden type="file" #imgFileInput (change)="detectFile($event)" />
+        </div>
+      </div>
     </div>
-
   </div>
 </div>

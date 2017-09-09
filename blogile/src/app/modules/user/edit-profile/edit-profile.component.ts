@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators, FormGroup, FormBuilder, AbstractControl } from '@angular/forms';
+import { CONSTANTS } from './../../../constants/constants';
+
+import { AuthService } from './../../../services/auth/auth.service';
+import { UserData } from './../../../services/user/user.data.service';
+import { Upload } from './../../../services/uploads/upload/upload';
+import { UploadService } from './../../../services/uploads/upload.service';
+import { UserInterface } from "../../../models/contracts/user.interface";
+
 
 @Component({
   selector: 'app-edit-profile',
@@ -6,10 +15,79 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-profile.component.scss']
 })
 export class EditProfileComponent implements OnInit {
+  public header: string;
+  public type: string;
 
-  constructor() { }
+  public user: UserInterface;
+  private userId;
+
+  public oldEmail: string;
+  public newEmail: string;
+  public password: string;
+  public upload: Upload;
+  public selectedFiles: FileList;
+  public fileName;
+
+  public changeEmailForm: FormGroup;
+  public oldEmailFormControl: AbstractControl;
+  public passwordFormControl: AbstractControl;
+  public newEmailFormControl: AbstractControl;
+
+  public changePictureForm: FormGroup;
+  public pictureFormControl: AbstractControl;
+
+  constructor(private formBuilder: FormBuilder,
+    private userService: UserData,
+    private uploadService: UploadService,
+    private auth: AuthService) { }
 
   ngOnInit() {
+    this.userId = this.auth.currentUserId || localStorage.authkey;
+
+    this.userService
+      .getUserByUid(this.userId)
+      .subscribe((res) => {
+        this.user = res;
+        this.userId = this.auth.currentUserId;
+      });
   }
 
+  detectFile(event) {
+    this.upload = event.target.files.item(0);
+    this.fileName = this.upload.name;
+    // this.upload = new Upload(this.upload);
+  }
+  changePicture() {
+    const storagePath = `images/users/${this.userId}`;
+    const dbPath = `users/${this.userId}/profileImage`;
+
+    if (this.user.profileImage.name) {
+      const oldImage = this.user.profileImage.name;
+      this.uploadService.deleteFileStorage(storagePath, oldImage);
+    }
+
+    // this.uploadService.uploadFile(storagePath, dbPath, dialogRef.componentInstance.upload);
+  }
+  resetPassword() {
+    this.auth.resetPassword(this.user.email);
+  }
+
+  changeEmail() {
+    const oldEmail = this.user.email;
+    // const password = dialogRef.componentInstance.password;
+    // const newEmail = dialogRef.componentInstance.newEmail;
+    // this.auth.changeEmail(oldEmail, newEmail, password);
+  }
+
+  changePhoto() {
+    const storagePath = `images/users/${this.userId}`;
+    const dbPath = `users/${this.userId}/profileImage`;
+
+    if (this.user.profileImage.name) {
+      const oldImage = this.user.profileImage.name;
+      this.uploadService.deleteFileStorage(storagePath, oldImage);
+    }
+
+    // this.uploadService.uploadFile(storagePath, dbPath, dialogRef.componentInstance.upload);
+  }
 }

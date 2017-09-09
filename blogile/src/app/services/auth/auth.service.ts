@@ -49,21 +49,6 @@ export class AuthService {
       return this.isAuthenticated ? this.authState.uid : '';
     }
 
-    // get currentUserEmail(): string {
-    //   return this.authenticated ? this.authState.email : '';
-    // }
-
-    // get currentUserLastName(): string {
-    //   return this.authenticated ? this.authState.lastName : '';
-    // }
-
-    // get currentUserImage(): string {
-
-    //   return this.authenticated ? this.authState.userProfileImage: '../../../assets/images/lamma.jpg';
-
-    // }
-
-
     get currentUserAnonymous(): boolean {
         return this.isAuthenticated ? this.authState.isAnonymous : false;
     }
@@ -102,14 +87,13 @@ export class AuthService {
          .catch(error => this.notificationService.popToast('error', 'Something went wrong!', error.message) );
     }
 
-    // // Sends email allowing user to reset password
-    // resetPassword(email: string) {
-    //   const fbAuth = firebase.auth();
+    resetPassword(email: string) {
+      const fbAuth = firebase.auth();
 
-    //   return fbAuth.sendPasswordResetEmail(email)
-    //     .then(() => console.log('email sent'))
-    //     .catch((error) => console.log(error));
-    // }
+      return fbAuth.sendPasswordResetEmail(email)
+        .then(() =>  this.notificationService.popToast('info', 'Success!', 'Email with instructions sent.'))
+        .catch((error) =>  this.notificationService.popToast('error', 'Something went wrong!', error.message));
+    }
 
     signOut(): void {
       this.afAuth.auth.signOut()
