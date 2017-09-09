@@ -1,0 +1,50 @@
+@import '../../../../styles';
+
+//body {
+//  display: flex;
+//  min-height: 100vh;
+//  flex-direction: column;
+//}
+//
+//main {
+//  flex: 1 0 auto;
+//}
+
+.page-footer {
+  position: fixed;
+  background-color: $primary-color;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  //overflow: visible;
+  z-index: 100;
+}
+
+
+.container {
+  margin-bottom: 1%;
+}
+
+a {
+  float: right;
+  margin-right: 2%;
+  text-decoration: underline;
+}
+
+
+.flow-text {
+  font-size: small;
+  display: inline;
+}
+
+.small-and-down  {
+ display: inline-block;
+}
+
+.copyrights {
+  text-align: justify;
+}
+
+.footer-wrapper {
+    margin-top: 3em;
+}

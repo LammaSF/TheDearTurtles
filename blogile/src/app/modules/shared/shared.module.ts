@@ -11,6 +11,7 @@ import { UserBarComponent } from './nav/user-bar/user-bar.component';
 import { Error404Component } from './error404/error404.component';
 import { AboutComponent } from './about/about.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -24,10 +25,12 @@ import { StatisticsComponent } from './statistics/statistics.component';
     UserBarComponent,
     Error404Component,
     AboutComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    FooterComponent
   ],
   exports: [
     NavComponent,
+    FooterComponent,
     Error404Component
   ]
 })
