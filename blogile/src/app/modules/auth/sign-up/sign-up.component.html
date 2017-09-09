@@ -1,5 +1,5 @@
 <div class="row">
-  <form [formGroup]="userForm" class="card col s12 m6 l6 xl4 offset-xl2">
+  <form [formGroup]="userForm" class="card col s12 m6 l6 xl3 offset-xl3">
     <input [(ngModel)]="firstName" placeholder="First Name" [formControl]="firstNameFormControl" class="validate">
     <div *ngIf="firstNameFormControl.hasError('pattern') && firstNameFormControl.dirty">
       Please enter a valid first name
@@ -35,16 +35,16 @@
     <div *ngIf="emailFormControl.hasError('required') && emailFormControl.dirty">
       Email is <strong>required</strong>
     </div>
-    <div class="upload">
+    <div class="upload center-align">
       <div *ngIf="upload">
         Selected photo: {{upload?.name}}
       </div>
-      <button type="button" md-raised-button (click)="imgFileInput.click()">Add a photo</button>
+      <button type="button" class="waves-effect waves-light btn blue-btn" (click)="imgFileInput.click()">Add a photo</button>
       <input hidden type="file" #imgFileInput (change)="detectFile($event)" />
     </div>
     <div class="center">
-      <button type="submit" class="blue-hover btn-flat" (click)="signup()">Sign Up</button>
-      <a class="blue-hover btn-flat" routerLink="/sign-in">Sign in now</a>
+      <button type="submit" class="waves-effect waves-light btn blue-btn" (click)="signup()">Sign Up</button>
+      <a class="waves-effect waves-light btn blue-btn" routerLink="/sign-in" >Sign in now</a>
     </div>
   </form>
 </div>

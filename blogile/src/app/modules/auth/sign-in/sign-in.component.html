@@ -1,5 +1,5 @@
 <div class="row">
-  <form [formGroup]="userForm" class="sign-in-form card col s12 m6 l6 xl4 offset-xl2">
+  <form [formGroup]="userForm" class="sign-in-form card col s12 m6 l6 xl3 offset-xl3">
     <input type="email" [(ngModel)]="email" placeholder="Email" [formControl]="emailFormControl" class="validate">
     <div *ngIf="emailFormControl.hasError('pattern')">
       Please enter a valid email address
@@ -15,8 +15,8 @@
       Password is <strong>required</strong>
     </div>
     <div class="center row">
-        <button type="submit" class="blue-hover btn-flat" (click)='signIn()'>Sign In</button>
-        <a routerLink="/sign-up" class="blue-hover btn-flat">Sign up now</a>
+        <button type="submit" class="waves-effect waves-light btn blue-btn" (click)='signIn()'>Sign In</button>
+        <a routerLink="/sign-up" class="waves-effect waves-light btn blue-btn">Sign up now</a>
     </div>
   </form>
 </div>
