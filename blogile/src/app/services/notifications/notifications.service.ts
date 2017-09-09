@@ -10,9 +10,9 @@ export class NotificationService {
   new ToasterConfig({
       showCloseButton: true,
       tapToDismiss: true,
-      timeout: 3000,
+      timeout: 1500,
       limit: 5,
-      positionClass: 'toast-top-left',
+      positionClass: 'toast-top-center',
   });
 
   popToast(type: any, title: string, body: string) {

@@ -1,45 +1,45 @@
+<div class="row" *ngIf=user>
+  <div class="col s12 m6 l4 xl5 offset-xl2">
+    <!--<div class="card darken-1">-->
+    <div class="card-content black-text">
 
-  <div class="row" *ngIf=user>
-    <div class="col s12 m6 l4 xl4 offset-xl3">
-      <!--<div class="card darken-1">-->
-      <div class="card-content black-text">
+      <ul class="collection z-depth-2 center-align">
+        <li class="collection-item avatar">
+          <span class="card-title black-text title">PROFILE</span>
 
-        <ul class="collection z-depth-2">
-          <li class="collection-item avatar">
-            <span class="card-title black-text title">PROFILE</span>
-
-          </li>
-          <li class="collection-item avatar">
+        </li>
+        <li class="collection-item avatar">
           <!--<i class="material-icons circle blue">insert_chart</i>-->
-          <span class="title"><img src="{{user.profileImage?.url}}"/></span>
-          <p></p>
-          </li>
-          <li class="collection-item avatar">
-            <!--<i class="material-icons circle blue">insert_chart</i>-->
-            <span class="title">User:</span>
-            <p>{{user.firstName + " " + user.lastName}}</p>
-          </li>
-          <li class="collection-item avatar">
-            <!--<i class="material-icons circle blue">insert_chart</i>-->
-            <span class="title">Username:</span>
-            <p>{{user.username}}</p>
-          </li>
-          <li class="collection-item avatar">
-            <!--<i class="material-icons circle blue">insert_chart</i>-->
-            <span class="title">Email:</span>
-            <p>{{user.email}}</p>
-          </li>
-          <li>
-            <div class="card-action center">
+          <div class=" center-align">
+            <img src="{{user.profileImage?.url}}" class="responsive-img" id="profile-image" />
+          </div>
+        </li>
+        <li class="collection-item avatar">
+          <!--<i class="material-icons circle blue">insert_chart</i>-->
+          <span class="title">User:</span>
+          <p>{{user.firstName + " " + user.lastName}}</p>
+        </li>
+        <li class="collection-item avatar">
+          <!--<i class="material-icons circle blue">insert_chart</i>-->
+          <span class="title">Username:</span>
+          <p>{{user.username}}</p>
+        </li>
+        <li class="collection-item avatar">
+          <!--<i class="material-icons circle blue">insert_chart</i>-->
+          <span class="title">Email:</span>
+          <p>{{user.email}}</p>
+        </li>
+        <li>
+          <div class="card-action center">
             <a routerLink="" class="btn blue">CREATE BLOG</a>
             <a routerLink="/user/edit-profile" class="btn blue">EDIT PROFILE</a>
-            </div>
-          </li>
-        </ul>
-
-      </div>
+          </div>
+        </li>
+      </ul>
 
     </div>
+
   </div>
+</div>
 
 <!--</div>-->

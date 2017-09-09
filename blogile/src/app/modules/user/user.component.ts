@@ -20,7 +20,7 @@ export class UserComponent implements OnInit {
   ngOnInit() {
     this.userId = this.auth.currentUserId || localStorage.authkey;
     console.log("dsdasd" + this.userId );
-    
+
     this.userService
     .getUserByUid(this.userId)
     .subscribe((res) => {
