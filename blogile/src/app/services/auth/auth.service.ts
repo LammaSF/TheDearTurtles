@@ -18,6 +18,7 @@ import { CONSTANTS } from '../../constants/constants';
 @Injectable()
 export class AuthService {
   authState: any = null;
+  public authUpdated: Subject<boolean> = new Subject<boolean>();
 
   constructor(
                 private afAuth: AngularFireAuth,
@@ -28,15 +29,16 @@ export class AuthService {
               ) {
                   this.afAuth.authState.subscribe((auth) => {
                     this.authState = auth;
+                    this.authUpdated.next(this.authState);
                   });
             }
 
-    get authenticated(): boolean {
+    get isAuthenticated(): boolean {
       return this.authState !== null;
     }
 
     get currentUser(): any {
-      return this.authenticated ? this.authState : null;
+      return this.isAuthenticated ? this.authState : null;
     }
 
     get currentUserObservable(): any {
@@ -44,26 +46,26 @@ export class AuthService {
     }
 
     get currentUserId(): string {
-      return this.authenticated ? this.authState.uid : '';
+      return this.isAuthenticated ? this.authState.uid : '';
     }
 
-    get currentUserEmail(): string {
-      return this.authenticated ? this.authState.email : '';
-    }
+    // get currentUserEmail(): string {
+    //   return this.authenticated ? this.authState.email : '';
+    // }
 
-    get currentUserLastName(): string {
-      return this.authenticated ? this.authState.lastName : '';
-    }
+    // get currentUserLastName(): string {
+    //   return this.authenticated ? this.authState.lastName : '';
+    // }
 
-    get currentUserImage(): string {
+    // get currentUserImage(): string {
 
-      return this.authenticated ? this.authState.userProfileImage: '../../../assets/images/lamma.jpg';
+    //   return this.authenticated ? this.authState.userProfileImage: '../../../assets/images/lamma.jpg';
 
-    }
+    // }
 
 
     get currentUserAnonymous(): boolean {
-        return this.authenticated ? this.authState.isAnonymous : false;
+        return this.isAuthenticated ? this.authState.isAnonymous : false;
     }
 
     get currentUserDisplayName(): string {
@@ -79,12 +81,11 @@ export class AuthService {
     emailSignUp(email: string, password: string, model: UserInterface) {
       return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
         .then((user) => {
-          user.updateProfile({ displayName: `${ model.username }` });
+          user.updateProfile({ displayName: `${model.firstName} ${model.lastName}` });
           this.authState = user;
         })
         .then(() => {
           this.userData.add(this.currentUserId, model);
-          this.router.navigateByUrl('/profile');
         })
         .catch(error => this.notificationService.popToast('error', 'Something went wrong!', error.message));
     }
@@ -95,10 +96,10 @@ export class AuthService {
            this.authState = user;
            localStorage.setItem(CONSTANTS.LOCALSTORAGE_AUTH_KEY_NAME, user.uid);
            localStorage.setItem(CONSTANTS.LOCALSTORAGE_EMAIL_KEY_NAME, user.email);
-           this.router.navigateByUrl('/profile');
            this.notificationService.popToast('success', 'Success!', 'You have logged successfully!');
+           this.router.navigateByUrl('/user/profile');
          })
-         .catch(error => this.notificationService.popToast('error', 'Something went wrong!', error.message));
+         .catch(error => this.notificationService.popToast('error', 'Something went wrong!', error.message) );
     }
 
     // // Sends email allowing user to reset password

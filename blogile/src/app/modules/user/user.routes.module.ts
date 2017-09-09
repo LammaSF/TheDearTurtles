@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { Routes, RouterModule } from '@angular/router';
 import { UserComponent } from './user.component';
-import {EditProfileComponent} from "./edit-profile/edit-profile.component";
-// import { AuthGuard } from '../../guards/auth.guard';
+import {EditProfileComponent} from './edit-profile/edit-profile.component';
+import { AuthGuard } from '../../guards/auth.guard';
 
 
 const userRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'profile', component: UserComponent },
-  { path: 'profile/edit-profile', component: EditProfileComponent},
+  { path: 'profile/edit-profile', canActivate: [AuthGuard], component: EditProfileComponent},
 ];
 
 @NgModule({

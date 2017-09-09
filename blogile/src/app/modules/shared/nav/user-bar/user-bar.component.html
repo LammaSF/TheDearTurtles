@@ -1,4 +1,6 @@
 <div class="user-bar">
-  <a routerLink="sign-in" class="waves-effect white-text btn-flat" *ngIf="!auth.authenticated">Sign in</a>
-  <a routerLink="/" *ngIf="auth.authenticated" (click)="signOut()">Sign out</a>
+  <a routerLink="/user/profile" class="waves-effect white-text btn-flat" *ngIf="isAuthenticated">Profile</a>
+  <a routerLink="sign-in" class="waves-effect white-text btn-flat" *ngIf="!isAuthenticated">Sign in</a>
+  <a routerLink="/" *ngIf="isAuthenticated" (click)="signOut()">Sign out</a>
+  
 </div>

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../../services/auth/auth.service";
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { AuthService } from '../../services/auth/auth.service';
+import { UserData } from '../../services/user/user.data.service';
+import { UserInterface } from '../../models/contracts/user.interface';
 
 
 @Component({
@@ -9,9 +11,18 @@ import {AuthService} from "../../services/auth/auth.service";
 })
 export class UserComponent implements OnInit {
 
-  constructor(public auth: AuthService) { }
+  public user: UserInterface;
+  public userId: string;
+
+  constructor(private auth: AuthService, private userService: UserData) { }
 
   ngOnInit() {
+    this.userService
+      .getUserByUid(this.auth.currentUserId)
+      .subscribe((res) => {
+        this.user = res;
+        this.userId = this.auth.currentUserId;
+      });
   }
 
 }
