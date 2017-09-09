@@ -13,7 +13,6 @@ export class UserComponent implements OnInit {
 
   public user: UserInterface;
   public userId: string;
-  // public isLoaded: Promise<boolean>;
 
   constructor(private auth: AuthService, private userService: UserData) { }
 

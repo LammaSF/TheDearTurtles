@@ -71,6 +71,7 @@ export class AuthService {
       })
       .then(() => {
         this.userData.add(this.currentUserId, model);
+        this.notificationService.popToast('success', 'Success!', 'Your account has been created!')
       })
       .catch(error => this.notificationService.popToast('error', 'Something went wrong!', error.message));
   }
@@ -81,8 +82,8 @@ export class AuthService {
         this.authState = user;
         localStorage.setItem(CONSTANTS.LOCALSTORAGE_AUTH_KEY_NAME, user.uid);
         localStorage.setItem(CONSTANTS.LOCALSTORAGE_EMAIL_KEY_NAME, user.email);
-        this.notificationService.popToast('success', 'Success!', 'You have logged successfully!');
         this.router.navigateByUrl('/user/profile');
+        this.notificationService.popToast('success', 'Success!', 'You have logged successfully!');
       })
       .catch(error => this.notificationService.popToast('error', 'Something went wrong!', error.message));
   }
@@ -100,6 +101,7 @@ export class AuthService {
       .then((user) => {
         user.updateEmail(newEmail);
         this.userData.update(this.currentUserId, { email: newEmail });
+        this.notificationService.popToast('info', 'Success!', 'Your email has been updated');
       })
       .catch((error) => this.notificationService.popToast('error', 'Something went wrong!', error.message));
 
@@ -113,15 +115,4 @@ export class AuthService {
         this.router.navigate(['/']);
       });
   }
-
-  //   private updateUserData(): void {
-  //     const path = `users/${this.currentUserId}`;
-  //     const data = {
-  //                   email: this.authState.email,
-  //                   name: this.authState.displayName
-  //                 };
-
-  //     this.db.object(path).update(data)
-  //     .catch(error => console.log(error));
-  // }
 }

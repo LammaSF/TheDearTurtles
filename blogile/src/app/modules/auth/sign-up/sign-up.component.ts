@@ -111,34 +111,14 @@ export class SignUpComponent implements OnInit {
   uploadFile() {
     const userId = this.auth.currentUserId;
     const file = this.selectedFiles.item(0);
+    if (!file) {
+      return;
+    }
     const dbPath = `users/${userId}/profileImage`;
     const storagePath = `images/users/${userId}`;
 
     this.upload = new Upload(file);
     return this.uploadService.uploadFile(storagePath, dbPath, this.upload);
   }
-
-
-
-  // this.userForm.valueChanges.subscribe(data => this.onValueChanged(data));
-  // this.onValueChanged();
-
-  // Updates validation state on form changes.
-  // onValueChanged(data?: any) {
-  //   if (!this.userForm) { return; }
-  //   const form = this.userForm;
-  //   for (const field in this.formErrors) {
-  //     // clear previous error message (if any)
-  //     this.formErrors[field] = '';
-  //     const control = form.get(field);
-  //     if (control && control.dirty && !control.valid) {
-  //       const messages = this.validationMessages[field];
-  //       // tslint:disable-next-line:forin
-  //       for (const key in control.errors) {
-  //         this.formErrors[field] += messages[key] + ' ';
-  //       }
-  //     }
-  //   }
-  // }
 }
 

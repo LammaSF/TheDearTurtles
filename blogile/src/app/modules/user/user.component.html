@@ -12,6 +12,7 @@
           <!--<i class="material-icons circle blue">insert_chart</i>-->
           <div class=" center-align">
             <img src="{{user.profileImage?.url}}" class="responsive-img" id="profile-image" />
+            <img src="../../../assets/images/profile-default.png" class="responsive-img" id="profile-image" *ngIf=!user.profileImage />
           </div>
         </li>
         <li class="avatar">

@@ -12,6 +12,7 @@ import { UserData } from '../../../../services/user/user.data.service';
 export class UserBarComponent implements OnInit {
   public isAuthenticated: boolean;
   public userProfileImageUrl;
+  public user;
 
   constructor(private auth: AuthService, private router: Router, private userService: UserData) { }
 
@@ -23,6 +24,7 @@ export class UserBarComponent implements OnInit {
         this.userService.getUserByUid(this.auth.currentUserId).
           subscribe((user) => {
             this.userProfileImageUrl = user.profileImage.url;
+            this.user = user;
           });
       }
 });
