@@ -18,6 +18,7 @@ import { UserRoutesModule } from './user.routes.module';
   declarations: [
     UserComponent,
     EditProfileComponent,
+
   ]
 })
 export class UserModule { }

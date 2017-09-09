@@ -7,26 +7,29 @@
         <ul class="collection z-depth-2">
           <li class="collection-item avatar">
             <span class="card-title black-text title">PROFILE</span>
+
+          </li>
+          <li class="collection-item avatar">
+          <!--<i class="material-icons circle blue">insert_chart</i>-->
+          <span class="title"><img src={{auth.currentUserImage}}/></span>
+          <p></p>
           </li>
           <li class="collection-item avatar">
             <!--<i class="material-icons circle blue">insert_chart</i>-->
-            <span class="title">Image:</span>
-            <p></p>
+
+            <span class="title">Username:</span>
+            <p>{{auth.currentUserDisplayName}}</p>
           </li>
-          <li class="collection-item avatar">
-            <!--<i class="material-icons circle blue">insert_chart</i>-->
-            <span class="title">First name:</span>
-            <p></p>
-          </li>
+
           <li class="collection-item avatar">
             <!--<i class="material-icons circle blue">insert_chart</i>-->
             <span class="title">Last name:</span>
-            <p></p>
+            <p>{{auth.currentUserLastName}}</p>
           </li>
           <li class="collection-item avatar">
             <!--<i class="material-icons circle blue">insert_chart</i>-->
             <span class="title">Email:</span>
-            <p></p>
+            <p>{{auth.currentUserEmail}}</p>
           </li>
           <li>
             <div class="card-action center">

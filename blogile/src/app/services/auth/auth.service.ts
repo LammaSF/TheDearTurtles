@@ -47,8 +47,23 @@ export class AuthService {
       return this.authenticated ? this.authState.uid : '';
     }
 
+    get currentUserEmail(): string {
+      return this.authenticated ? this.authState.email : '';
+    }
+
+    get currentUserLastName(): string {
+      return this.authenticated ? this.authState.lastName : '';
+    }
+
+    get currentUserImage(): string {
+
+      return this.authenticated ? this.authState.userProfileImage: '../../../assets/images/lamma.jpg';
+
+    }
+
+
     get currentUserAnonymous(): boolean {
-      return this.authenticated ? this.authState.isAnonymous : false;
+        return this.authenticated ? this.authState.isAnonymous : false;
     }
 
     get currentUserDisplayName(): string {

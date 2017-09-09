@@ -9,14 +9,13 @@
           <span class="card-title black-text title">PROFILE</span>
         </li>
         <li class="collection-item avatar">
-
           <span class="title">Image:</span>
           <p></p>
-          <i class="material-icons circle blue right">edit</i>
+          <i class="material-icons circle blue">edit</i>
         </li>
         <li class="collection-item avatar">
-          <span class="title">First name:</span>
-          <p></p>
+          <span class="title">Username:</span>
+          <p>{{auth.currentUserDisplayName}}</p>
           <i class="material-icons circle blue">edit</i>
         </li>
         <li class="collection-item avatar">
@@ -27,8 +26,8 @@
         </li>
         <li class="collection-item avatar">
           <span class="title">Email:</span>
-          <p></p>
-          <i class="material-icons circle blue">edit</i>
+          <p>{{auth.currentUserEmail}}</p>
+         <div class="right-align"><i class="material-icons circle blue">edit</i></div>
         </li>
         <li>
           <div class="card-action center">
