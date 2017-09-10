@@ -7,13 +7,13 @@
       <div class="card-action">
         <div class="row">
           <div class="input-field col s10">
-            <input [(ngModel)]="newEmail" value="{{user.email}}" id="change-email" type="email" class="validate">
+            <input [(ngModel)]="newEmail" value="{{user.email}}" id="change-email" type="email" class="validate" minlength="6" maxlength="25">
             <label [ngClass]="{'active': user?.email}" for="change-email">Enter your new email:</label>
           </div>
         </div>
         <div class="row center-align">
           <div class="input-field col s10">
-            <input [(ngModel)]="password" value="password" id="password" type="password" class="validate">
+            <input [(ngModel)]="password" value="password" id="password" type="password" class="validate" minlength="6" maxlength="10">
             <label [ngClass]="{active: true}" for="password">Enter your password:</label>
           </div>
           <button type="button" class="waves-effect waves-light btn blue-btn" (click)="changeEmail()">Change Email</button>

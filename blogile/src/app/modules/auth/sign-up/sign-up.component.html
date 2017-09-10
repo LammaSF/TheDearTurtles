@@ -1,40 +1,22 @@
 <div class="row">
   <form [formGroup]="userForm" class="card col s12 m6 l6 xl3 offset-xl3">
-    <input [(ngModel)]="firstName" placeholder="First Name" [formControl]="firstNameFormControl" class="validate">
-    <div *ngIf="firstNameFormControl.hasError('pattern') && firstNameFormControl.dirty">
-      Please enter a valid first name
-    </div>
-    <div *ngIf="firstNameFormControl.hasError('required') && firstNameFormControl.dirty">
-      First name is <strong>required</strong>
+    <div class="input-field">
+      <input [(ngModel)]="firstName" id="firstName" placeholder="First Name" [formControl]="firstNameFormControl" class="validate">
+      <label for="firstName" data-error="Please enter firstname between 2 and 10 characters." data-success="Firstname is verified." *ngIf="firstNameFormControl.hasError('pattern') && firstNameFormControl.dirty">
+      </label>
     </div>
     <input [(ngModel)]="lastName" placeholder="Last Name" [formControl]="lastNameFormControl" class="validate">
-    <div *ngIf="lastNameFormControl.hasError('pattern') && lastNameFormControl.dirty">
-      Please enter a valid last name
-    </div>
-    <div *ngIf="lastNameFormControl.hasError('required') && lastNameFormControl.dirty">
-      Last name is <strong>required</strong>
-    </div>
+    <label data-error="Please enter lastname between 2 and 10 characters." data-success="Form is verified." *ngIf="lastNameFormControl.hasError('pattern') && lastNameFormControl.touched">
+    </label>
     <input [(ngModel)]="username" placeholder="Username" [formControl]="usernameFormControl" class="validate">
-    <div *ngIf="usernameFormControl.hasError('pattern') && usernameFormControl.dirty">
-      Please enter a valid username
-    </div>
-    <div *ngIf="usernameFormControl.hasError('required') && usernameFormControl.dirty">
-      Username is <strong>required</strong>
-    </div>
+    <label data-error="Please enter lastname between 4 and 10 characters." data-success="Form is verified." *ngIf="usernameFormControl.hasError('pattern') && usernameFormControl.touched">
+      </label>
     <input type="password" [(ngModel)]="password" placeholder="Password" [formControl]="passwordFormControl" class="validate">
-    <div *ngIf="passwordFormControl.hasError('pattern') && passwordFormControl.dirty">
-      Please enter a valid password
-    </div>
-    <div *ngIf="passwordFormControl.hasError('required') && passwordFormControl.dirty">
-      Password is <strong>required</strong>
-    </div>
+    <label data-error="Please enter lastname between 6 and 10 characters." data-success="Form is verified." *ngIf="passwordFormControl.hasError('pattern') && passwordFormControl.touched">
+      </label>
     <input [(ngModel)]="email" placeholder="Email" [formControl]="emailFormControl" class="validate">
-    <div *ngIf="emailFormControl.hasError('pattern') && emailFormControl.dirty">
-      Please enter a valid email address
-    </div>
-    <div *ngIf="emailFormControl.hasError('required') && emailFormControl.dirty">
-      Email is <strong>required</strong>
-    </div>
+    <label data-error="Please enter email between 6 and 25 characters." data-success="Form is verified." *ngIf="emailFormControl.hasError('pattern') && emailFormControl.touched">
+      </label>
     <div class="upload center-align">
       <div *ngIf="upload">
         Selected photo: {{upload?.name}}
@@ -44,7 +26,7 @@
     </div>
     <div class="center">
       <button type="submit" class="waves-effect waves-light btn blue-btn" (click)="signup()">Sign Up</button>
-      <a class="waves-effect waves-light btn blue-btn" routerLink="/sign-in" >Sign in now</a>
+      <a class="waves-effect waves-light btn blue-btn" routerLink="/sign-in">Sign in now</a>
     </div>
   </form>
 </div>

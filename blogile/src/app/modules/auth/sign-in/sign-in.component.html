@@ -1,22 +1,18 @@
 <div class="row">
   <form [formGroup]="userForm" class="sign-in-form card col s12 m6 l6 xl3 offset-xl3">
-    <input type="email" [(ngModel)]="email" placeholder="Email" [formControl]="emailFormControl" class="validate">
-    <div *ngIf="emailFormControl.hasError('pattern')">
-      Please enter a valid email address
+    <div class="input-field">
+      <input type="email" [(ngModel)]="email" placeholder="Email" [formControl]="emailFormControl" class="validate">
+      <label for="email" data-error="Please enter email between 6 and 25 characters." data-success="Email is verified." *ngIf="emailFormControl.hasError('pattern') && emailFormControl.dirty">
+      </label>
     </div>
-    <div *ngIf="emailFormControl.hasError('required')">
-      Email is <strong>required</strong>
-    </div>
-    <input type="password"  [(ngModel)]="password" placeholder="Password" [formControl]="passwordFormControl" class="validate">
-    <div *ngIf="passwordFormControl.hasError('pattern')">
-      Please enter a valid password
-    </div>
-    <div *ngIf="passwordFormControl.hasError('required')">
-      Password is <strong>required</strong>
+    <div class="input-field">
+      <input type="password" [(ngModel)]="password" placeholder="Password" [formControl]="passwordFormControl" class="validate">
+      <label for="password" data-error="Please enter a between 6 and 10 characters." data-success="Password is verified." *ngIf="passwordFormControl.hasError('pattern') ">
+      </label>
     </div>
     <div class="center row">
-        <button type="submit" class="waves-effect waves-light btn blue-btn" (click)='signIn()'>Sign In</button>
-        <a routerLink="/sign-up" class="waves-effect waves-light btn blue-btn">Sign up now</a>
+      <button type="submit" class="waves-effect waves-light btn blue-btn" (click)='signIn()'>Sign In</button>
+      <a routerLink="/sign-up" class="waves-effect waves-light btn blue-btn">Sign up now</a>
     </div>
   </form>
 </div>

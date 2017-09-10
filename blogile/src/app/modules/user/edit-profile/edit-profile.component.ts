@@ -75,7 +75,7 @@ export class EditProfileComponent implements OnInit {
     const oldEmail = this.user.email;
     const password = this.password;
     const newEmail = this.newEmail;
-    console.log(oldEmail + ' ' + password + ' ' +  newEmail);
+
     this.auth.changeEmail(oldEmail, newEmail, password);
   }
 }
