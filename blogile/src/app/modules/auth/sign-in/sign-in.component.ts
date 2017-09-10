@@ -7,18 +7,19 @@ import { FormBuilder, AbstractControl } from '@angular/forms';
 
 import { AuthService } from '../../../services/auth/auth.service';
 import { CONSTANTS } from '../../../constants/constants';
+import { NotificationService } from '../../../services/notifications/notifications.service';
 
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss']
 })
-export class SignInComponent implements OnInit{
-    public email;
-    public password;
+export class SignInComponent implements OnInit {
+    public email: string;
+    public password: string;
     public userForm: FormGroup;
-    public emailFormControl: AbstractControl;
-    public passwordFormControl: AbstractControl;
+    public emailFormControl: FormControl;
+    public passwordFormControl: FormControl;
 
     constructor(private formBuilder: FormBuilder, private auth: AuthService) { }
 
@@ -46,6 +47,7 @@ export class SignInComponent implements OnInit{
     }
 
     signIn(): void {
+
         this.auth.emailLogin(this.email, this.password);
     }
 

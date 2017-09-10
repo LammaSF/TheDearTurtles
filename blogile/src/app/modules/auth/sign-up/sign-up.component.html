@@ -34,7 +34,7 @@
       <input hidden type="file" #imgFileInput (change)="detectFile($event)" />
     </div>
     <div class="center">
-      <button type="submit" class="waves-effect waves-light btn blue-btn"  (click)="signup()">Sign Up</button>
+      <button type="submit" [disabled]="!userForm.valid" class="waves-effect waves-light btn blue-btn"  (click)="signup()">Sign Up</button>
       <a class="waves-effect waves-light btn blue-btn" routerLink="/sign-in">Sign in now</a>
     </div>
   </form>

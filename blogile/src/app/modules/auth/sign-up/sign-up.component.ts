@@ -28,11 +28,11 @@ export class SignUpComponent implements OnInit {
   private userId;
 
   public userForm: FormGroup;
-  public firstNameFormControl: AbstractControl;
-  public lastNameFormControl: AbstractControl;
-  public usernameFormControl: AbstractControl;
-  public emailFormControl: AbstractControl;
-  public passwordFormControl: AbstractControl;
+  public firstNameFormControl: FormControl;
+  public lastNameFormControl: FormControl;
+  public usernameFormControl: FormControl;
+  public emailFormControl: FormControl;
+  public passwordFormControl: FormControl;
 
   public upload: Upload;
   public selectedFiles: FileList;
@@ -42,7 +42,7 @@ export class SignUpComponent implements OnInit {
     private auth: AuthService,
     private uploadService: UploadService,
     private router: Router,
-    private userFactory: UserFactory
+    private userFactory: UserFactory,
   ) { }
 
   createForm() {

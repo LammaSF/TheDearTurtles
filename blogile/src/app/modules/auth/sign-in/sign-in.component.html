@@ -11,8 +11,8 @@
       </label>
     </div>
     <div class="center row">
-      <button type="submit" class="waves-effect waves-light btn blue-btn" (click)='signIn()'>Sign In</button>
-      <a routerLink="/sign-up" class="waves-effect waves-light btn blue-btn">Sign up now</a>
+      <button type="submit" [disabled]="!userForm.valid" class="waves-effect waves-light btn blue-btn" (click)='signIn()'>Sign In</button>
+      <a routerLink="/sign-up"  class="waves-effect waves-light btn blue-btn">Sign up now</a>
     </div>
   </form>
 </div>
