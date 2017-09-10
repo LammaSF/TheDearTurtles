@@ -3,7 +3,7 @@ export interface BlogInterface {
     title: string;
     authorName: string;
     description: string;
-    createdDate: Date;
+    createdOn: number;
     coverImage: any;
-    threads: Object[];
+    threads: any;
 }

@@ -7,23 +7,25 @@ export class Blog implements BlogInterface {
     title: string;
     authorName: string;
     description: string;
-    createdDate: Date;
+    createdOn: number;
     coverImage: any;
-    threads: Object[];
+    threads: any;
 
     constructor(
-        userId,
+        userId: string,
         title: string,
         authorName: string,
         description: string,
         coverImage: any,
+        createdOn: number,
+        threads: any,
     ) {
         this.userId = userId;
         this.title = title;
         this.authorName = authorName;
         this.description = description;
         this.coverImage = coverImage;
-        this.createdDate = new Date();
-        this.threads = new Array<any>();
+        this.createdOn = createdOn;
+        this.threads = threads;
     }
 }

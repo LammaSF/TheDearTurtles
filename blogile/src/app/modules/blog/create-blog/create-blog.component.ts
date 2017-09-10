@@ -67,6 +67,8 @@ export class CreateBlogComponent implements OnInit {
       author,
       this.blogDescription,
       null,
+      Date.now(),
+      []
       );
 
     this.blogData

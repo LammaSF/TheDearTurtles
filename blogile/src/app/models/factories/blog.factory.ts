@@ -11,7 +11,9 @@ export class BlogFactory {
         authorName: string,
         description: string,
         coverImage: any,
+        createdOn: number,
+        threads: any,
     ): BlogInterface {
-        return new Blog(userId, title, authorName, description, coverImage);
+        return new Blog(userId, title, authorName, description, coverImage, createdOn, threads);
     }
 }
