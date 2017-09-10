@@ -7,11 +7,11 @@
       <div class="card-action center-align">
         <div class="row">
           <div class="input-field col s12">
-            <input [(ngModel)]="blogTitle" placeholder="Blog title" id="blog-title" type="text" class="validate">
+            <input [(ngModel)]="blogTitle" [ngClass]="{active: true}" placeholder="Blog title" id="blog-title" type="text" class="validate">
             <label for="blog-title">Enter blog title:</label>
           </div>
           <div class="input-field col s12">
-            <input [(ngModel)]="blogDescription" placeholder="Blog description" id="blog-description" type="text" class="validate">
+            <input [(ngModel)]="blogDescription"  [ngClass]="{active: true}" placeholder="Blog description" id="blog-description" type="text" class="validate">
             <label for="blog-description">Enter blog description:</label>
           </div>
           <div class="input-field col s12">
