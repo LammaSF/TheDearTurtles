@@ -1,31 +1,42 @@
-<div class="row" *ngIf=user>
-  <div class="col s12 m6 l4 xl3 offset-xl3">
-    <div class="card darken-1">
-      <div class="card-content black-text center-align">
-        <span class="card-title">Profile edit</span>
-      </div>
-      <div class="card-action">
-        <div class="row">
-          <div class="input-field col s10">
-            <input [(ngModel)]="newEmail" value="{{user.email}}" id="change-email" type="email" class="validate" minlength="6" maxlength="25">
-            <label [ngClass]="{'active': user?.email}" for="change-email">Enter your new email:</label>
+<div class="edit-profile-wrapper">
+  <div class="row" *ngIf=user>
+    <div class="col s12 m6 l4 xl3 offset-xl3">
+      <div class="card darken-1">
+        <div class="card-content black-text center-align">
+          <span class="card-title">Profile edit</span>
+        </div>
+        <div class="card-action">
+          <div class="row">
+            <div class="input-field col s10">
+              <input [(ngModel)]="newEmail" value="{{user.email}}" id="change-email" type="email" class="validate">
+              <label [ngClass]="{'active': user?.email}" for="change-email">Enter your new email:</label>
+            </div>
+          </div>
+          <div class="row center-align">
+            <div class="input-field col s10">
+              <input [(ngModel)]="password" value="password" id="password" type="password" class="validate">
+              <label [ngClass]="{active: true}" for="password">Enter your password:</label>
+            </div>
+            <button type="button" class="waves-effect waves-light btn blue-btn" (click)="changeEmail()">Change Email
+              </button>
           </div>
         </div>
-        <div class="row center-align">
-          <div class="input-field col s10">
-            <input [(ngModel)]="password" value="password" id="password" type="password" class="validate" minlength="6" maxlength="10">
-            <label [ngClass]="{active: true}" for="password">Enter your password:</label>
+        <div class="card-action row center-align">
+          <div class="row ">
+            <button type="button" class="waves-effect waves-light btn blue-btn" (click)="resetPassword()">Reset
+                         password
+                       </button>
           </div>
         </div>
         <div class="card-action row center-align">
           <button type="button" class="upload-btn waves-effect waves-light btn blue-btn" (click)="imgFileInput.click()">
-            Pick photo
-          </button>
+                     Pick photo
+                   </button>
           <span *ngIf="upload">Selected photo: {{fileName}}</span>
-          <input hidden type="file" #imgFileInput (change)="detectFile($event)"/>
+          <input hidden type="file" #imgFileInput (change)="detectFile($event)" />
           <button type="button" class="submit-btn waves-effect waves-light btn blue-btn" (click)="changePicture()">
-            Change photo
-          </button>
+                     Change photo
+                   </button>
         </div>
       </div>
     </div>
