@@ -4,8 +4,20 @@
       <a type="button" class="waves-effect waves-light btn blue-btn" routerLink="/blog/all-blogs">View all blogs</a>
     </div>
   </div>
-  <div class="blogs row center-align" *ngIf=user>
+  <div class="blogs row center-align" *ngIf=isAuthenticated>
     <h4>My blogs:</h4>
-    <app-all-blogs class="my-blogs col s12 m12 l10 xl8 offset-xl3"></app-all-blogs>
+    <div class="row">
+            <div class="card col s12 m6 l5 xl5  offset-xl2" *ngFor="let blog of blogs">
+              <div class="card=image">
+                <img class="responsive-img" src="{{blog.image.url}}" />
+              </div>
+              <div class="card-content black-text center-align">
+                <span class="card-title"><strong>Blog title:</strong> {{blog.title}}</span>
+                <span class="card-title"><strong>Blog author:</strong> {{blog.authorName}}</span>
+                <span class="card-title"><strong>Created on:</strong> {{blog.createdOn | date}}</span>
+                <button class="waves-effect waves-light btn blue-btn">View more</button>
+              </div>
+            </div>
+          </div>
   </div>
 </div>
