@@ -11,7 +11,7 @@ const blogRoutes: Routes = [
   { path: '', redirectTo: 'all-blogs', pathMatch: 'full' },
   { path: 'create', canActivate: [AuthGuard], component: CreateBlogComponent },
   { path: 'all-blogs', component: AllBlogsComponent },
-  // { path: ':id', component: ViewBlogComponent },
+  { path: 'blog/:id', component: ViewBlogComponent },
 ];
 
 @NgModule({

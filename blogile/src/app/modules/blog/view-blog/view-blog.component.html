@@ -1,1 +1,15 @@
-<h1>test</h1>
+<div class="row">
+  <div class="card col s12 m8 l6 xl7 offset-xl1">
+    <div class="row ">
+      <img class="blog-img responsive-img z-depth-2" src="{{blog?.image?.url}}" />
+    </div>
+    <div class="row">
+      <h4 class="fluid-text center-align">{{blog?.title}}</h4>
+    </div>
+    <div class="row center-align">
+      <a class="waves-effect waves-light btn blue-btn" routerLink="/home">Back to home</a>
+      <a class="waves-effect waves-light btn blue-btn" routerLink="/blogs/all-blogs">Back to all</a>
+      <a routerLink="" *ngIf="isAuthenticated && isAuthor(blog?.userId)" class="btn blue">Add thread</a>
+    </div>
+  </div>
+</div>

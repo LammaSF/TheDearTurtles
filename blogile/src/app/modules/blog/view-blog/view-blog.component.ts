@@ -18,7 +18,7 @@ export class ViewBlogComponent implements OnInit {
   public userId: string;
 
   public blogKey;
-
+  
 
   constructor(
     private route: ActivatedRoute,
@@ -28,10 +28,12 @@ export class ViewBlogComponent implements OnInit {
 
   ngOnInit() {
     this.userId = localStorage.getItem('authkey');
+
     this.route.params
         .subscribe(params => {
             this.blogDataService.getBlogById(params.id)
                 .subscribe(blog => {
+                  console.log(params.id);
                     this.blog = blog;
                     this.blogKey = blog.$key;
                 });

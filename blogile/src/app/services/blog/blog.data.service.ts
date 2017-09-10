@@ -27,7 +27,7 @@ export class BlogData {
                 .then(_ => {
                     return _.key;
                 })
-                .catch((error) => this.notificationService.popToast('error', 'Ooops!', error.message)));
+                .catch((error) => this.notificationService.popToast('error', 'Something went wrong!', error.message)));
     }
 
     editBlog(blogKey: string, blog: object) {
@@ -38,7 +38,7 @@ export class BlogData {
                 .then(data => {
                     return data;
                 })
-                .catch((error) => this.notificationService.popToast('error', 'Ooops!', error.message)));
+                .catch((error) => this.notificationService.popToast('error', 'Something went wrong!', error.message)));
     }
 
     delete(blogKey: string) {
