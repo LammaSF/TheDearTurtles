@@ -49,8 +49,8 @@ export class CreateBlogComponent implements OnInit {
     if (!file) {
       return new Promise((resolve, reject) => { resolve(); });
     } else {
-      const dbPath = `activities/${this.blogKey}/image`;
-      const storagePath = `images/activities/${this.blogKey}`;
+      const dbPath = `blogs/${this.blogKey}/image`;
+      const storagePath = `images/blogs/${this.blogKey}`;
       this.upload = new Upload(file);
       return this.uploadService.uploadFile(storagePath, dbPath, this.upload);
     }
