@@ -1,22 +1,31 @@
 <div class="row">
   <form [formGroup]="userForm" class="card col s12 m6 l6 xl3 offset-xl3">
     <div class="input-field">
-      <input [(ngModel)]="firstName" id="firstName" placeholder="First Name" [formControl]="firstNameFormControl" class="validate">
-      <label for="firstName" data-error="Please enter firstname between 2 and 10 characters." data-success="Firstname is verified." *ngIf="firstNameFormControl.hasError('pattern') && firstNameFormControl.dirty">
+      <input type="text" [(ngModel)]="firstName" id="firstName" placeholder="First Name" [formControl]="firstNameFormControl" class="validate">
+      <label for="firstName" data-error="Please enter firstname between 2 and 10 characters." data-success="Firstname is verified."
+        *ngIf="firstNameFormControl.hasError('pattern') && firstNameFormControl.dirty">
       </label>
     </div>
-    <input [(ngModel)]="lastName" placeholder="Last Name" [formControl]="lastNameFormControl" class="validate">
-    <label data-error="Please enter lastname between 2 and 10 characters." data-success="Form is verified." *ngIf="lastNameFormControl.hasError('pattern') && lastNameFormControl.touched">
+    <div class="input-field">
+      <input type="text" [(ngModel)]="lastName" placeholder="Last Name" [formControl]="lastNameFormControl" class="validate">
+      <label data-error="Please enter lastname between 2 and 10 characters." data-success="Form is verified." *ngIf="lastNameFormControl.hasError('pattern') && lastNameFormControl.touched">
     </label>
-    <input [(ngModel)]="username" placeholder="Username" [formControl]="usernameFormControl" class="validate">
-    <label data-error="Please enter lastname between 4 and 10 characters." data-success="Form is verified." *ngIf="usernameFormControl.hasError('pattern') && usernameFormControl.touched">
+    </div>
+    <div class="input-field">
+      <input  type="text" [(ngModel)]="username" placeholder="Username" [formControl]="usernameFormControl" class="validate">
+      <label data-error="Please enter lastname between 4 and 10 characters." data-success="Form is verified." *ngIf="usernameFormControl.hasError('pattern') && usernameFormControl.touched">
       </label>
-    <input type="password" [(ngModel)]="password" placeholder="Password" [formControl]="passwordFormControl" class="validate">
-    <label data-error="Please enter lastname between 6 and 10 characters." data-success="Form is verified." *ngIf="passwordFormControl.hasError('pattern') && passwordFormControl.touched">
+    </div>
+    <div class="input-field">
+      <input type="password" [(ngModel)]="password" placeholder="Password" [formControl]="passwordFormControl" class="validate">
+      <label data-error="Please enter lastname between 6 and 10 characters." data-success="Form is verified." *ngIf="passwordFormControl.hasError('pattern') && passwordFormControl.touched">
       </label>
-    <input [(ngModel)]="email" placeholder="Email" [formControl]="emailFormControl" class="validate">
-    <label data-error="Please enter email between 6 and 25 characters." data-success="Form is verified." *ngIf="emailFormControl.hasError('pattern') && emailFormControl.touched">
+    </div>
+    <div class="input-field">
+      <input type="email" [(ngModel)]="email" placeholder="Email" [formControl]="emailFormControl" class="validate">
+      <label for="email" data-error="Please enter email between 6 and 25 characters." data-success="Form is verified." *ngIf="emailFormControl.hasError('pattern') && emailFormControl.touched">
       </label>
+    </div>
     <div class="upload center-align">
       <div *ngIf="upload">
         Selected photo: {{upload?.name}}
@@ -25,7 +34,7 @@
       <input hidden type="file" #imgFileInput (change)="detectFile($event)" />
     </div>
     <div class="center">
-      <button type="submit" class="waves-effect waves-light btn blue-btn" (click)="signup()">Sign Up</button>
+      <button type="submit" class="waves-effect waves-light btn blue-btn"  (click)="signup()">Sign Up</button>
       <a class="waves-effect waves-light btn blue-btn" routerLink="/sign-in">Sign in now</a>
     </div>
   </form>

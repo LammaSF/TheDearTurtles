@@ -42,23 +42,4 @@ export class UploadService {
     const storageRef = firebase.storage().ref();
     storageRef.child(`${storagePath}/${name}`).delete();
   }
-
-
-  // getProfileImageUrl(userId: string) {
-  //   const userStorageRef = firebase.storage().ref().child('images/users/' + userId + '_image.jpg');
-  //   userStorageRef.getDownloadURL().then(url => {
-  //   });
-  // }
-  // deleteUpload(path: string, upload: Upload) {
-  //   this.deleteFileData(path, upload.$key)
-  //     .then(() => {
-  //       this.deleteFileStorage(upload.name);
-  //     })
-  //     .catch(error => console.log(error));
-  // }
-  // private deleteFileData(path: string, key: string) {
-  //   return this.db.list(`${this.basePath}/`).remove(key);
-  // }
-
-
 }

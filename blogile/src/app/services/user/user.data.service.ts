@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { UserInterface } from '../../models/contracts/user.interface';
 import * as firebase from 'firebase';
+import { NotificationService } from '../notifications/notifications.service';
 
 @Injectable()
 export class UserData {
@@ -11,7 +12,7 @@ export class UserData {
     public user;
     public userProfileImage;
 
-    constructor(db: AngularFireDatabase) {
+    constructor(db: AngularFireDatabase, private notificationService: NotificationService) {
         this.db = db;
         this.firebaseCollection = this.db.list('/users');
     }
@@ -25,13 +26,12 @@ export class UserData {
         return this.items;
     }
 
-    // need to add some notifications, not console outputs
     add(userId: string, user: UserInterface): void {
         const path = `users/${userId}`;
 
         this.db.object(path)
             .set(user)
-            .catch(error => console.log(error));
+            .catch(error => this.notificationService.popToast('error', 'Error!', error.message));
     }
 
     set(userId: string, data: object) {
@@ -39,7 +39,7 @@ export class UserData {
 
         this.db.object(path)
             .set(data)
-            .catch(error => console.log(error));
+            .catch(error => this.notificationService.popToast('error', 'Error!', error.message));
     }
 
     update(userId: string, data: object): void {
@@ -47,7 +47,7 @@ export class UserData {
 
         this.db.object(path)
             .update(data)
-            .catch(error => console.log(error));
+            .catch(error => this.notificationService.popToast('error', 'Error!', error.message));
     }
 
     getUserByUid(userId: string) {

@@ -7,7 +7,7 @@
     </div>
     <div class="input-field">
       <input type="password" [(ngModel)]="password" placeholder="Password" [formControl]="passwordFormControl" class="validate">
-      <label for="password" data-error="Please enter a between 6 and 10 characters." data-success="Password is verified." *ngIf="passwordFormControl.hasError('pattern') ">
+      <label for="password"  data-error="Please enter a between 6 and 10 characters." data-success="Password is verified." *ngIf="passwordFormControl.hasError('pattern') && passwordFormControl">
       </label>
     </div>
     <div class="center row">

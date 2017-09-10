@@ -48,19 +48,16 @@ export class SignUpComponent implements OnInit {
   createForm() {
     this.usernameFormControl = new FormControl('', [
       Validators.required,
-      Validators.pattern(CONSTANTS.USERNAME_VALIDATION_REGEX),
       Validators.minLength(4),
       Validators.maxLength(10)]);
 
     this.firstNameFormControl = new FormControl('', [
       Validators.required,
-      Validators.pattern(CONSTANTS.FIRSTNAME_VALIDATION_REGEX),
       Validators.minLength(2),
       Validators.maxLength(10)]);
 
     this.lastNameFormControl = new FormControl('', [
       Validators.required,
-      Validators.pattern(CONSTANTS.LASTNAME_VALIDATION_REGEX),
       Validators.minLength(2),
       Validators.maxLength(10)]);
 

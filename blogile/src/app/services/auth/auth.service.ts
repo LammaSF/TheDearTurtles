@@ -71,7 +71,7 @@ export class AuthService {
       })
       .then(() => {
         this.userData.add(this.currentUserId, model);
-        this.notificationService.popToast('success', 'Success!', 'Your account has been created!')
+        this.notificationService.popToast('success', 'Success!', 'Your account has been created!');
       })
       .catch(error => this.notificationService.popToast('error', 'Something went wrong!', error.message));
   }
