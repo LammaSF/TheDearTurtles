@@ -50,8 +50,8 @@ import { ThreadModule } from './modules/thread/thread.module';
     ToasterModule,
     UserModule,
     AuthModule,
-    BlogModule,
     ThreadModule,
+    BlogModule,
     RoutesModule,
   ],
   providers: [

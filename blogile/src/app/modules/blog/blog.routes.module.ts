@@ -5,11 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../../guards/auth.guard';
 import { CreateBlogComponent } from './create-blog/create-blog.component';
 import { AllBlogsComponent } from './all-blogs/all-blogs.component';
+import { ViewBlogComponent } from './view-blog/view-blog.component';
 
 const blogRoutes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'all-blogs', pathMatch: 'full' },
   { path: 'create', canActivate: [AuthGuard], component: CreateBlogComponent },
-  { path: 'all-blogs', component: AllBlogsComponent }
+  { path: 'all-blogs', component: AllBlogsComponent },
+  // { path: ':id', component: ViewBlogComponent },
 ];
 
 @NgModule({
