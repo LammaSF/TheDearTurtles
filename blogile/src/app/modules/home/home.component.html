@@ -5,9 +5,9 @@
     </div>
   </div>
   <div class="blogs row center-align" *ngIf=isAuthenticated>
-    <h4>My blogs:</h4>
+    <h4 class="fluid-text">My blogs:</h4>
     <div class="row">
-            <div class="card col s12 m6 l5 xl5  offset-xl2" *ngFor="let blog of blogs">
+            <div class="card col s12 m6 l5 xl4  offset-xl4" *ngFor="let blog of blogs">
               <div class="card=image">
                 <img class="responsive-img" src="{{blog.image.url}}" />
               </div>
