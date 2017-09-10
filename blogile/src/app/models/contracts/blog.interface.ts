@@ -1,8 +1,9 @@
 export interface BlogInterface {
+    userId: string;
     title: string;
+    authorName: string;
     description: string;
-    authorId: string;
     createdDate: Date;
     coverImage: any;
-    threads: Array<Object>;
+    threads: Object[];
 }

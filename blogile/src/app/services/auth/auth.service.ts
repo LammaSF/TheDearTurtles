@@ -66,7 +66,7 @@ export class AuthService {
   emailSignUp(email: string, password: string, model: UserInterface) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((user) => {
-        user.updateProfile({ displayName: `${model.firstName} ${model.lastName}` });
+        user.updateProfile({ displayName: `${model.username}` });
         this.authState = user;
       })
       .then(() => {

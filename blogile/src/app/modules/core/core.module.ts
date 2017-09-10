@@ -8,6 +8,8 @@ import { AuthGuard } from '../../guards/auth.guard';
 import { UploadService } from '../../services/uploads/upload.service';
 import { NotificationService } from '../../services/notifications/notifications.service';
 import { UserFactory } from '../../models/factories/user.factory';
+import { BlogFactory } from '../../models/factories/blog.factory';
+import { BlogData } from '../../services/blog/blog.data.service';
 
 @NgModule({
     providers: [
@@ -16,7 +18,9 @@ import { UserFactory } from '../../models/factories/user.factory';
       UserData,
       NotificationService,
       UploadService,
-      UserFactory
+      UserFactory,
+      BlogFactory,
+      BlogData
     ],
 })
 export class CoreModule {
