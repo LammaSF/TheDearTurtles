@@ -28,6 +28,8 @@ import { UserModule } from './modules/user/user.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { HomeModule } from './modules/home/home.module';
 import { BlogModule } from './modules/blog/blog.module';
+import { ThreadsModule } from './modules/threads/threads.module';
+
 
 @NgModule({
   declarations: [
@@ -50,6 +52,7 @@ import { BlogModule } from './modules/blog/blog.module';
     UserModule,
     AuthModule,
     BlogModule,
+    ThreadsModule,
     RoutesModule,
   ],
   providers: [

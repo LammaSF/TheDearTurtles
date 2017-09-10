@@ -7,7 +7,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 
 
 const sharedRoutes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'about', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   { path: 'statistics', component: StatisticsComponent },
 ];

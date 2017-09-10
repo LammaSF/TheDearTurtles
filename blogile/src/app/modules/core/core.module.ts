@@ -10,6 +10,7 @@ import { NotificationService } from '../../services/notifications/notifications.
 import { UserFactory } from '../../models/factories/user.factory';
 import { BlogFactory } from '../../models/factories/blog.factory';
 import { BlogData } from '../../services/blog/blog.data.service';
+import { BlogAuthorGuard } from '../../guards/blog.author.guard';
 
 @NgModule({
     providers: [
@@ -20,7 +21,8 @@ import { BlogData } from '../../services/blog/blog.data.service';
       UploadService,
       UserFactory,
       BlogFactory,
-      BlogData
+      BlogData,
+      BlogAuthorGuard
     ],
 })
 export class CoreModule {

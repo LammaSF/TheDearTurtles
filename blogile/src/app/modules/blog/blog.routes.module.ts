@@ -9,8 +9,8 @@ import { ViewBlogComponent } from './view-blog/view-blog.component';
 
 const blogRoutes: Routes = [
   { path: '', redirectTo: 'all-blogs', pathMatch: 'full' },
-  { path: 'create', canActivate: [AuthGuard], component: CreateBlogComponent },
   { path: 'all-blogs', component: AllBlogsComponent },
+  { path: 'create', canActivate: [AuthGuard], component: CreateBlogComponent },
   { path: 'blog/:id', component: ViewBlogComponent },
 ];
 

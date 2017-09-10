@@ -19,7 +19,6 @@ import { BlogRoutesModule } from './blog.routes.module';
     ViewBlogComponent,
   ],
   exports: [
-    AllBlogsComponent,
   ]
 })
 export class BlogModule { }
