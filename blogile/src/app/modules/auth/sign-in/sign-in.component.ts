@@ -37,8 +37,7 @@ export class SignInComponent implements OnInit{
             Validators.required,
             Validators.pattern(CONSTANTS.PASSWORD_VALIDATION_REGEX),
             Validators.minLength(6),
-            Validators.maxLength(10)]
-        ),
+            Validators.maxLength(10)]);
 
         this.userForm = this.formBuilder.group({
             emailFormControl: this.emailFormControl,
