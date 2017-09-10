@@ -1,1 +1,11 @@
-
+<div class="controls">
+  <div class="row">
+    <div class="col s12 m10 l8 xl7 offset-xl5">
+      <a type="button" class="waves-effect waves-light btn blue-btn" routerLink="/blog/all-blogs">View all blogs</a>
+    </div>
+  </div>
+  <div class="blogs row center-align" *ngIf=user>
+    <h4>My blogs:</h4>
+    <app-all-blogs class="my-blogs col s12 m12 l10 xl8 offset-xl3"></app-all-blogs>
+  </div>
+</div>

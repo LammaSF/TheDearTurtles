@@ -23,6 +23,7 @@ export class CreateBlogComponent implements OnInit {
   public blogKey: string;
   public blog: BlogInterface;
   public selectedFiles: FileList;
+  public filename: string;
 
   constructor(private auth: AuthService,
     private uploadService: UploadService,
@@ -49,6 +50,7 @@ export class CreateBlogComponent implements OnInit {
     if (!file) {
       return new Promise((resolve, reject) => { resolve(); });
     } else {
+      this.filename = file.name;
       const dbPath = `blogs/${this.blogKey}/image`;
       const storagePath = `images/blogs/${this.blogKey}`;
       this.upload = new Upload(file);

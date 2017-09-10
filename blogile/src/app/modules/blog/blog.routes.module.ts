@@ -8,7 +8,7 @@ import { AllBlogsComponent } from './all-blogs/all-blogs.component';
 
 const blogRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'create', component: CreateBlogComponent },
+  { path: 'create', canActivate: [AuthGuard], component: CreateBlogComponent },
   { path: 'all-blogs', component: AllBlogsComponent }
 ];
 
