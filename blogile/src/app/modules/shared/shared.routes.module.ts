@@ -7,14 +7,13 @@ import { StatisticsComponent } from './statistics/statistics.component';
 
 
 const sharedRoutes: Routes = [
-  { path: '', redirectTo: 'about', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'about', component: AboutComponent },
   { path: 'statistics', component: StatisticsComponent },
 ];
 
 @NgModule({
   imports: [
-    CommonModule,
     RouterModule.forChild(sharedRoutes)
   ],
   exports: [

@@ -8,14 +8,13 @@ import { AuthGuard } from '../../guards/auth.guard';
 
 
 const userRoutes: Routes = [
-  { path: '', redirectTo: 'profile', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'profile', canActivate: [AuthGuard], component: UserComponent },
   { path: 'edit-profile', canActivate: [AuthGuard],  component: EditProfileComponent},
 ];
 
 @NgModule({
   imports: [
-    CommonModule,
     RouterModule.forChild(userRoutes)
   ],
   exports: [

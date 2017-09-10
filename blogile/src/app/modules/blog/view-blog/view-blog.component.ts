@@ -18,7 +18,7 @@ export class ViewBlogComponent implements OnInit {
   public userId: string;
 
   public blogKey;
-  
+
 
   constructor(
     private route: ActivatedRoute,

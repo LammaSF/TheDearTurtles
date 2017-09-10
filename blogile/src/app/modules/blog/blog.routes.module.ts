@@ -8,15 +8,14 @@ import { AllBlogsComponent } from './all-blogs/all-blogs.component';
 import { ViewBlogComponent } from './view-blog/view-blog.component';
 
 const blogRoutes: Routes = [
-  { path: '', redirectTo: 'all-blogs', pathMatch: 'full' },
-  { path: 'all-blogs', component: AllBlogsComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'all', component: AllBlogsComponent },
   { path: 'create', canActivate: [AuthGuard], component: CreateBlogComponent },
   { path: 'blog/:id', component: ViewBlogComponent },
 ];
 
 @NgModule({
   imports: [
-    CommonModule,
     RouterModule.forChild(blogRoutes)
   ],
   exports: [

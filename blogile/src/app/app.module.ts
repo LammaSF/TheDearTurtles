@@ -29,6 +29,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { HomeModule } from './modules/home/home.module';
 import { BlogModule } from './modules/blog/blog.module';
 import { ThreadsModule } from './modules/threads/threads.module';
+import { firebaseConfig } from '../environments/firebaseConfig';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { ThreadsModule } from './modules/threads/threads.module';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     BrowserAnimationsModule,
