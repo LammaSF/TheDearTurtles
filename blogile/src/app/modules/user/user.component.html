@@ -1,41 +1,41 @@
-<div class="row" *ngIf=user>
-  <div class="col s12 m6 l4 xl5 offset-xl2">
-    <div class="card-content black-text">
+<div class="profile-wrapper col offset-l2">
+  <div class="row" *ngIf=user>
+    <div class="col s12 m12 l6 xl5 offset-xl2">
+      <div class="card-content black-text">
 
-      <ul class="collection z-depth-2 center-align">
-        <li class="avatar">
-          <span class="card-title black-text title">PROFILE</span>
+        <ul class="collection z-depth-2 center-align">
+          <li class="avatar">
+            <span class="card-title black-text title">PROFILE</span>
 
-        </li>
-        <li class="avatar">
-          <div class=" center-align">
-              <img src="{{user.profileImage.url}}" id="nav-image" class="responsive-image profile-image" *ngIf="user.profileImage"/>
-              <img src="../../../assets/images/profile-default.png" class="responsive-img profile-image" id="nav-image" *ngIf=!user?.profileImage />
-          </div>
-        </li>
-        <li class="avatar">
-          <span class="title">User:</span>
-          <p>{{user.firstName + " " + user.lastName}}</p>
-        </li>
-        <li class="avatar">
-          <span class="title">Username:</span>
-          <p>{{user.username}}</p>
-        </li>
-        <li class="avatar">
-          <span class="title">Email:</span>
-          <p>{{user.email}}</p>
-        </li>
-        <li>
-          <div class="card-action center">
-            <a routerLink="/blog/create" class="btn blue">CREATE BLOG</a>
-            <a routerLink="/user/edit-profile" class="btn blue">EDIT PROFILE</a>
-          </div>
-        </li>
-      </ul>
+          </li>
+          <li class="avatar">
+            <div class=" center-align">
+                <img src="{{user.profileImage.url}}" id="nav-image" class="responsive-image profile-image" *ngIf="user.profileImage"/>
+                <img src="../../../assets/images/profile-default.png" class="responsive-img profile-image" id="nav-image" *ngIf=!user?.profileImage />
+            </div>
+          </li>
+          <li class="avatar">
+            <span class="title">User:</span>
+            <p>{{user.firstName + " " + user.lastName}}</p>
+          </li>
+          <li class="avatar">
+            <span class="title">Username:</span>
+            <p>{{user.username}}</p>
+          </li>
+          <li class="avatar">
+            <span class="title">Email:</span>
+            <p>{{user.email}}</p>
+          </li>
+          <li>
+            <div class="card-action center">
+              <a routerLink="/blog/create" class="btn blue">CREATE BLOG</a>
+              <a routerLink="/user/edit-profile" class="btn blue">EDIT PROFILE</a>
+            </div>
+          </li>
+        </ul>
+
+      </div>
 
     </div>
-
   </div>
 </div>
-
-<!--</div>-->
