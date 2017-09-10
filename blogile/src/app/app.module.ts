@@ -28,7 +28,6 @@ import { UserModule } from './modules/user/user.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { HomeModule } from './modules/home/home.module';
 import { BlogModule } from './modules/blog/blog.module';
-import { ThreadModule } from './modules/thread/thread.module';
 
 @NgModule({
   declarations: [
@@ -50,7 +49,6 @@ import { ThreadModule } from './modules/thread/thread.module';
     ToasterModule,
     UserModule,
     AuthModule,
-    ThreadModule,
     BlogModule,
     RoutesModule,
   ],
