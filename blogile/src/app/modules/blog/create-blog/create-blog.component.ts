@@ -81,7 +81,7 @@ export class CreateBlogComponent implements OnInit {
         }
       })
       .then(() => this.uploadFile()
-        .then(() => this.router.navigateByUrl('/blog/all-blogs')));
+        .then(() => this.router.navigateByUrl('/home')));
 
     this.notificationService.popToast('success', 'Success!', 'Your blog is added! Redirecting...');
 }
