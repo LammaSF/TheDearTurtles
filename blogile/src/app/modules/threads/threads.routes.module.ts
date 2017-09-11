@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../../guards/auth.guard';
-import { AllThreadsComponent } from './all-threads/all-threads.component';
 import { CreateThreadComponent } from './create-thread/create-thread.component';
 import { BlogAuthorGuard } from '../../guards/blog.author.guard';
 
