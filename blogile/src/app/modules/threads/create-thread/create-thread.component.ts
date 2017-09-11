@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogData } from '../../../services/blog/blog.data.service';
 
 @Component({
   selector: 'app-create-thread',
@@ -7,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateThreadComponent implements OnInit {
 
-  constructor() { }
+  constructor(private blogDataService: BlogData) { }
 
   ngOnInit() {
   }
-
 }

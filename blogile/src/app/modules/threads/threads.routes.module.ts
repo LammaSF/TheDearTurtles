@@ -10,7 +10,6 @@ import { BlogAuthorGuard } from '../../guards/blog.author.guard';
 
 const threadsRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'all-threads', component: AllThreadsComponent },
   { path: 'create', canActivate: [BlogAuthorGuard], component: CreateThreadComponent },
 ];
 
