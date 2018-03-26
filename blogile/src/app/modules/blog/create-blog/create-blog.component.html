@@ -8,15 +8,16 @@
         <div class="row">
           <div class="input-field col s12">
             <input [(ngModel)]="blogTitle" [ngClass]="{active: true}" placeholder="Blog title" id="blog-title" type="text" class="validate">
-            <label for="blog-title">Enter blog title:</label>
+            <label for="blog-title"></label>
           </div>
           <div class="input-field col s12">
             <input [(ngModel)]="blogDescription"  [ngClass]="{active: true}" placeholder="Blog description" id="blog-description" type="text" class="validate">
-            <label for="blog-description">Enter blog description:</label>
+            <label for="blog-description"></label>
           </div>
           <div class="input-field col s12">
             <button type="button" class="upload-btn waves-effect waves-light btn blue-btn" (click)="imgFileInput.click()">Pick cover photo</button>
-            <span *ngIf="upload">Selected photo: {{filename}}</span>
+            <span *ngIf="upload; else elseBlock">Selected photo: {{filename}}</span>
+
             <input hidden type="file" #imgFileInput (change)="detectFile($event)" />
           </div>
           <div class="submit-btn">

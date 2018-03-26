@@ -1,6 +1,20 @@
 @import "./../../../../styles";
 
+
 .blog-img{
-    width: 800px;
-    height: 250px;
+  width: 700px;
+  height: 350px;
+}
+
+.description {
+  color: lightblue;
+  font-style: italic;
+}
+
+
+.card {
+  margin-top: 20px;
+  padding-left:0 !important;
+  padding-right:0 !important;
+
 }

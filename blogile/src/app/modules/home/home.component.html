@@ -1,23 +1,32 @@
 <div class="controls">
   <div class="row">
-    <div class="col s12 m10 l8 xl7 offset-xl5">
-      <a type="button" class="waves-effect waves-light btn blue-btn" routerLink="/blogs/all">View all blogs</a>
+    <div class="col s12 m4 l8 xl7">
+        <a class="waves-effect waves-light btn blue-btn" routerLink="/news">News</a>
+        <a class="waves-effect waves-light btn blue-btn" *ngIf="isAuthenticated" routerLink="/blogs/myblogs">View my blog</a>
+        <a class="waves-effect waves-light btn blue-btn" routerLink="/blogs/all">View all blogs</a>
+        <a class="waves-effect waves-light btn blue-btn" routerLink="statistics">Statistics</a>
+      </div>
+      <div class="col col-md-4 hide-on-small-and-down">
+        <img class="ice-skating" src="../../../assets/images/df1ac4ec82cbb70f472faab9cb3b87d3.png" alt="">
+      </div>
+
     </div>
   </div>
-  <div class="blogs row center-align" *ngIf=isAuthenticated>
-    <h4 class="fluid-text">My blogs:</h4>
-    <div class="row">
-            <div class="card col s12 m6 l5 xl4  offset-xl4" *ngFor="let blog of blogs">
-              <div class="card=image">
-                <img class="responsive-img" src="{{blog.image?.url}}" />
-              </div>
-              <div class="card-content black-text center-align">
-                <span class="card-title"><strong>Blog title:</strong> {{blog?.title}}</span>
-                <span class="card-title"><strong>Blog author:</strong> {{blog?.authorName}}</span>
-                <span class="card-title"><strong>Created on:</strong> {{blog?.createdOn | date}}</span>
-                <a class="waves-effect waves-light btn blue-btn" routerLink="/blog/{{blog.$key}}">View more</a>
-              </div>
-            </div>
-          </div>
-  </div>
-</div>
+
+  <!--<div class="blogs row center-align" *ngIf=isAuthenticated>-->
+    <!--<h4 class="fluid-text">My blogs:</h4>-->
+    <!--<div class="row">-->
+            <!--<div class="card col s12 m6 l5 xl4  offset-xl4" *ngFor="let blog of blogs">-->
+              <!--<div class="card=image">-->
+                <!--<img class="responsive-img" src="{{blog.image?.url}}" />-->
+              <!--</div>-->
+              <!--<div class="card-content black-text center-align">-->
+                <!--<span class="card-title"><strong>Blog title:</strong> {{blog?.title}}</span>-->
+                <!--<span class="card-title"><strong>Blog author:</strong> {{blog?.authorName}}</span>-->
+                <!--<span class="card-title"><strong>Created on:</strong> {{blog?.createdOn | date}}</span>-->
+                <!--<a class="waves-effect waves-light btn blue-btn" routerLink="/blog/{{blog.$key}}">View more</a>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+  <!--</div>-->
+

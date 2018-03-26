@@ -31,7 +31,6 @@ import { BlogModule } from './modules/blog/blog.module';
 import { ThreadsModule } from './modules/threads/threads.module';
 import { firebaseConfig } from '../environments/firebaseConfig';
 
-
 @NgModule({
   declarations: [
     AppComponent,

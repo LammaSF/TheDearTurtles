@@ -1,7 +1,7 @@
 <div class="profile-wrapper col offset-l2">
   <div class="row" *ngIf=user>
     <div class="col s12 m12 l6 xl5 offset-xl2">
-      <div class="card-content black-text">
+      <div class="card-content card darken-1 black-text">
 
         <ul class="collection z-depth-2 center-align">
           <li class="avatar">
@@ -31,6 +31,7 @@
               <a routerLink="/blogs/create" class="btn blue">CREATE BLOG</a>
               <a routerLink="/user/edit-profile" class="btn blue">EDIT PROFILE</a>
               <a routerLink="/home" class="btn blue">BACK TO HOME</a>
+              <a *ngIf="userId==''" routerLink="/news/create" class="btn blue">CREATE NEWS</a>
             </div>
           </li>
         </ul>

@@ -7,6 +7,7 @@ import { BlogFactory } from '../../../models/factories/blog.factory';
 import { BlogInterface } from '../../../models/contracts/blog.interface';
 import { NotificationService } from '../../../services/notifications/notifications.service';
 import { BlogData } from '../../../services/blog/blog.data.service';
+import { NewsData } from '../../../services/news/news.data.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +18,7 @@ import { Router } from '@angular/router';
 export class CreateBlogComponent implements OnInit {
   public blogTitle: string;
   public blogDescription: string;
-  public blogCoverImage: any;
+  public blogCoverImage:null ;
 
   public upload: Upload;
   public blogKey: string;
@@ -30,6 +31,7 @@ export class CreateBlogComponent implements OnInit {
     private blogFactory: BlogFactory,
     private notificationService: NotificationService,
     private blogData: BlogData,
+    private newsData: NewsData,
     private router: Router) { }
 
   ngOnInit() {
@@ -72,16 +74,20 @@ export class CreateBlogComponent implements OnInit {
       Date.now(),
       []
       );
+    console.log();
 
-    this.blogData
-      .add(this.blog)
-      .then(blogKey => {
-        if (this.upload !== null) {
-          this.blogKey = blogKey;
-        }
-      })
-      .then(() => this.uploadFile()
-        .then(() => this.router.navigateByUrl('/home')));
+      this.blogData
+        .add(this.blog)
+        .then(blogKey => {
+          if (this.upload !== null) {
+            this.blogKey = blogKey;
+          }
+        })
+        .then(() => this.uploadFile()
+          .then(() => this.router.navigateByUrl('/blogs/'+this.blogKey)));
+
+
+
 
     this.notificationService.popToast('success', 'Success!', 'Your blog is added! Redirecting...');
 }

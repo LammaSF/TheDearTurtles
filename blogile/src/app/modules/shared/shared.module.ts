@@ -31,6 +31,7 @@ import { FooterComponent } from './footer/footer.component';
   exports: [
     NavComponent,
     FooterComponent,
+    StatisticsComponent,
     Error404Component
   ]
 })

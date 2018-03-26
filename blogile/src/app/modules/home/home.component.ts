@@ -25,9 +25,9 @@ export class HomeComponent implements OnInit {
       this.isAuthenticated = res ? true : false;
     });
 
-    this.blogsDataService.getAllBlogs()
-      .subscribe(items => {
-        this.blogs = items.filter(x => x.userId === this.userId);
-    });
+    // this.blogsDataService.getAllBlogs()
+    //   .subscribe(items => {
+    //     this.blogs = items.filter(x => x.userId === this.userId);
+    // });
   }
 }

@@ -11,7 +11,7 @@ export class AllBlogsComponent implements OnInit {
   public blogs;
 
   constructor(private auth: AuthService,
-    private blogsDataService: BlogData) { }
+              private blogsDataService: BlogData) { }
 
   ngOnInit() {
     this.blogsDataService.getAllBlogs()

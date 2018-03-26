@@ -1,0 +1,16 @@
+<div class="blogs row center-align" *ngIf=isAuthenticated>
+  <h4 class="fluid-text">My blogs:</h4>
+  <div class="row">
+    <div class="card col s12 m6 l5 xl4  offset-xl4" *ngFor="let blog of blogs">
+      <div class="card=image">
+        <img class="responsive-img" src="{{blog.image?.url}}" />
+      </div>
+      <div class="card-content black-text center-align">
+        <span class="card-title"><strong>Blog title:</strong> {{blog?.title}}</span>
+        <span class="card-title"><strong>Blog author:</strong> {{blog?.authorName}}</span>
+        <span class="card-title"><strong>Created on:</strong> {{blog?.createdOn | date}}</span>
+        <a class="waves-effect waves-light btn blue-btn" routerLink="/blog/{{blog.$key}}">View more</a>
+      </div>
+    </div>
+  </div>
+</div>

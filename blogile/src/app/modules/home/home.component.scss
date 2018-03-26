@@ -3,3 +3,32 @@
 .circle {
   background-color: $accent-color;
 }
+.controls .row .col{
+
+  position: fixed;
+  bottom: 150px;
+}
+
+.ice-skating {
+  right: 3%;
+  margin-top: -120px;
+  position: fixed;
+  bottom: 30px;
+  opacity: 0.5;
+}
+
+
+
+.controls .btn {
+  margin: 10px 0 0 10%;
+  display: block;
+  width: 250px;
+  background-color: $primary-color-dark;
+}
+
+
+.btn:hover{
+  color:lightblue;
+  transition: all 0.3s ease;
+  font-style: italic;
+}

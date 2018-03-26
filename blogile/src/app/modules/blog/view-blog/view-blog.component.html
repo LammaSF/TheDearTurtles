@@ -1,14 +1,20 @@
 <div class="row">
   <div class="card col s12 m8 l6 xl7 offset-xl1">
-    <div class="row ">
-      <img class="blog-img responsive-img z-depth-2" src="{{blog?.image?.url}}" />
+    <div class="row">
+      <div class="card-image coverImage">
+        <img class="responsive-img blog-img" *ngIf="blog.image?.url" src="{{blog.image?.url}}"/>
+        <img class="responsive-img blog-img" *ngIf="!blog.image?.url || blog.image.url==null" src="../../../../assets/images/ice-skating-arlberg-st-anton-1%20(1).jpg"/>
+      </div>
     </div>
     <div class="row">
       <h4 class="fluid-text center-align">{{blog?.title}}</h4>
     </div>
+    <div class="row">
+      <h6 class="fluid-text center-align description">{{blog?.description}}</h6>
+    </div>
     <div class="row center-align">
-      <a class="waves-effect waves-light btn blue-btn" routerLink="/home">Back to home</a>
       <a class="waves-effect waves-light btn blue-btn" routerLink="/blogs/all">Back to all</a>
+      <a class="waves-effect waves-light btn blue-btn" routerLink="/home">Back to home</a>
       <a routerLink="" *ngIf="isAuthenticated && isAuthor(blog?.userId)" class="btn blue">Add thread</a>
     </div>
   </div>

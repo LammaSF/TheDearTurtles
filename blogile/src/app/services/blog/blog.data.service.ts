@@ -63,4 +63,22 @@ export class BlogData {
 
         return item;
     }
+
+  getBlogByAuthor(author: string) {
+    const items = this.db.list('blogs', {
+      preserveSnapshot: true,
+    });
+
+    let item: any;
+
+    items.subscribe(snapshots => {
+      snapshots.forEach(snapshot => {
+        if (snapshot.val().authorName === author) {
+          item = snapshot.val();
+        }
+      });
+    });
+
+    return item;
+  }
 }

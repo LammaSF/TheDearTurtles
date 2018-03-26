@@ -1,0 +1,18 @@
+<div class="allblogs-wrapper">
+  <h3 class="fluid-text center-align">Ice skating news:</h3>
+  <div class="row" *ngFor="let blog of news">
+    <div class="card col s12 m6 l5 xl4  offset-xl4">
+      <div class="card=image">
+        <img class="responsive-img blog-image" *ngIf="blog.image?.url" src="{{blog.image?.url}}"/>
+        <img class="responsive-img blog-image" *ngIf="!blog.image?.url || blog.image.url==null" src="../../../../assets/images/ice-skating-arlberg-st-anton-1%20(1).jpg"/>
+        <span *ngIf="upload; else elseBlock">Selected photo: {{filename}}</span>
+      </div>
+      <div class="card-content black-text center-align">
+        <span class="card-title"><strong>Title:</strong> {{blog?.title}}</span>
+        <!--<span class="card-title"><strong>:</strong> {{blog?.authorName}}</span>-->
+        <span class="card-title"><strong>Created on:</strong> {{blog?.createdOn | date}}</span>
+        <a class="waves-effect waves-light btn blue-btn" routerLink="/news/{{blog.$key}}">View more</a>
+      </div>
+    </div>
+  </div>
+</div>

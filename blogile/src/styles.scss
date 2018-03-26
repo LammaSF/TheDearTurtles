@@ -13,7 +13,16 @@ $divider-color:        #BDBDBD;
 .blue-hover:hover{
     color: $accent-color;
 }
-.blue-btn{
+.blue-btn {
     background-color: $accent-color;
     margin: 2%;
+    //text-shadow: -2px -2px 2px rgb(151, 150, 150);
+  font-family: "Harlow Solid Italic";
+}
+body {
+  display: flex;
+  // min-height: 100vh;
+  flex-direction: column;
+  background: url('/assets/images/bg-ice.gif') no-repeat fixed center ;
+  // position: relatve;
 }

@@ -4,4 +4,16 @@ nav{
     background-color: $primary-color;
     padding-left: 1%;
     padding-right: 1%;
+    opacity: 0.9;
+    z-index:3;
+    //text-shadow: -2px -2px 2px rgba(151, 150, 150, 1);
+    font-family: "Harlow Solid Italic";
+}
+
+.logo-img {
+  width: 83%;
+}
+
+.nav-wrapper {
+  color: #FFFFFF;
 }
