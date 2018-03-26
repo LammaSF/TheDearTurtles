@@ -16,7 +16,7 @@
           </div>
           <div class="input-field col s12">
             <button type="button" class="upload-btn waves-effect waves-light btn blue-btn" (click)="imgFileInput.click()">Pick cover photo</button>
-            <span *ngIf="upload; else elseBlock">Selected photo: {{filename}}</span>
+            <span *ngIf="upload;">Selected photo: {{filename}}</span>
 
             <input hidden type="file" #imgFileInput (change)="detectFile($event)" />
           </div>
